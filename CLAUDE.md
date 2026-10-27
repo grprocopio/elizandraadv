@@ -18,6 +18,14 @@ quando o sistema pede movimento reduzido (decisão da cliente em 2026-10-25).
   `python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<consulta>" --domain ux`
   `python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<consulta>" --stack html-tailwind`
   (o SKILL.md dela usa `${CLAUDE_PLUGIN_ROOT}`; neste repositório o caminho é o acima).
+- **landing-page-design** (elayadesign/ai-design-skills): estratégia de landing page, regras de copy, estados, itens de entrega.
+  Vale aqui: uma única ação (WhatsApp), seção de frase que acende palavra por palavra, sem palavras soltas na última linha,
+  estados de hover/clique/foco, dados estruturados de FAQ, 404 própria, metatags.
+  NÃO vale aqui: depoimentos, logos, números de resultado, garantias e "reversão de risco" (OAB); a fonte única sem itálico,
+  a paleta escura e a escala fixa de tamanhos (o DESIGN.md e a escolha da cliente prevalecem); trocar hífens da ortografia
+  do português (ano-safra, boa-fé, recuperá-lo estão corretos).
+- **design-to-motion** (elayadesign/ai-design-skills): animação de cards com visual e de mockups. O site não tem cards desse tipo;
+  a abertura da hero é a da cliente (pré-carregador + nome), não a "hero appear" da skill.
 
 ## Build
 `npm run build` gera `assets/css/site.css` e `assets/js/main.min.js`. Edite `src/site.css` e `assets/js/main.js`, nunca os gerados.

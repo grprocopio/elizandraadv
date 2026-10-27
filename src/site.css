@@ -394,3 +394,11 @@
   box-shadow: 0 0 0 1.5px rgba(239, 229, 212, .85), 0 14px 30px -10px rgba(24, 4, 9, .6);
 }
 .wa-float::after { border-color: #D9C3A0; }
+
+/* ---------- Toque e clique: resposta física em tudo que é clicável ---------- */
+.clause:active > span:first-child { transform: translateX(12px) scale(.99); }
+.btn-line:active, .header-cta:active, .social-btn:active, .m-link:active, .wa-float:active { transform: scale(.98); }
+.faq-item summary:active .faq-q { opacity: .8; }
+
+/* ---------- Página 404 ---------- */
+.notfound-num { font-family: Anton, Impact, sans-serif; line-height: .85; color: transparent; -webkit-text-stroke: 1.2px rgb(var(--accent)); }
