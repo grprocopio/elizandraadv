@@ -265,21 +265,16 @@
 
   /* ---------- Divisão de textos ---------- */
   var heroName = $('[data-hero-name]');
-  var chars = [];
+  // Nome em 3 peças (Dra. / Elizandra / Girardon), não letra a letra: 3 camadas em vez de ~19.
+  var nameWords = [];
   if (heroName) {
     $$('.word', heroName).forEach(function (word) {
-      var text = word.textContent;
+      var inner = document.createElement('span');
+      inner.className = 'word-in';
+      inner.textContent = word.textContent;
       word.textContent = '';
-      text.split('').forEach(function (ch) {
-        var mask = document.createElement('span');
-        mask.className = 'char-mask';
-        var c = document.createElement('span');
-        c.className = 'char';
-        c.textContent = ch;
-        mask.appendChild(c);
-        word.appendChild(mask);
-        chars.push(c);
-      });
+      word.appendChild(inner);
+      nameWords.push(inner);
     });
     heroName.classList.add('is-split');
     heroName.style.visibility = 'visible';
@@ -327,7 +322,7 @@
       .fromTo(fieldLines, { scaleX: 0, transformOrigin: '50% 50%' }, { scaleX: 1, duration: 1.8, stagger: { each: 0.05, from: 'end' } }, 0)
       .to(portraitWrap, { opacity: 1, duration: 1.4, ease: 'power2.out' }, 0.05)
       .fromTo(portraitInner, { y: 90, scale: 1.04 }, { y: 0, scale: 1, duration: 2.1 }, 0.05)
-      .fromTo(chars, { yPercent: 115, rotate: 6 }, { yPercent: 0, rotate: 0, duration: 1.4, stagger: 0.035, onComplete: function () { heroName.classList.add('intro-done'); } }, 0.3)
+      .fromTo(nameWords, { yPercent: 112 }, { yPercent: 0, duration: 1.5, stagger: 0.12, onComplete: function () { heroName.classList.add('intro-done'); gsap.set(nameWords, { clearProps: 'transform' }); } }, 0.3)
       .to(monoLines, { strokeDashoffset: 0, duration: 1.1, stagger: 0.12, ease: 'power2.inOut' }, 0.2)
       .fromTo(fades, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 1.2, stagger: 0.12 }, 0.8);
     return tl;
@@ -388,33 +383,6 @@
       hX(nx * 90); hY(ny * 60); bX(nx * 26); nX(nx * 34);
     }, { passive: true });
     hero.addEventListener('mouseleave', function () { pX(0); pR(0); hX(0); hY(0); bX(0); nX(0); });
-  }
-
-  /* Letras do nome: pulam ao passar o mouse e uma onda percorre o nome de tempos em tempos */
-  /* um pulo por vez por letra: não reinicia no meio, sem tremer */
-  var hop = function (c, delay) {
-    if (c._hopping) return;
-    c._hopping = true;
-    gsap.to(c, {
-      yPercent: -13, duration: 0.34, ease: 'power2.out', delay: delay || 0,
-      yoyo: true, repeat: 1, overwrite: false,
-      onComplete: function () { c._hopping = false; }
-    });
-  };
-  if (finePointer) {
-    chars.forEach(function (c) {
-      c.parentElement.addEventListener('pointerenter', function () { if (heroName.classList.contains('intro-done')) hop(c); }, { passive: true });
-    });
-  }
-  if (chars.length) {
-    var wave = function () {
-      if (window.scrollY > window.innerHeight * 0.8 || document.hidden || !heroName.classList.contains('intro-done')) return;
-      chars.forEach(function (c, i) { hop(c, i * 0.045); });
-    };
-    gsap.delayedCall(introAllowed ? 4.6 : 1.5, function () {
-      wave();
-      setInterval(wave, 7000);
-    });
   }
 
   /* ---------- Faixa corrida (marquee) ---------- */

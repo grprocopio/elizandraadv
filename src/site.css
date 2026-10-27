@@ -141,14 +141,15 @@
 }
 @media (min-width: 1024px) { .hero-name { font-size: clamp(5rem, min(11.8vw, 20svh), 12.5rem); line-height: .88; } }
 /* acabamento metálico */
-.hero-name .word, .hero-name .char {
+.hero-name .word, .hero-name .word-in {
   background: linear-gradient(180deg, #FFFFFF 0%, #EFE8DB 34%, #A8A296 68%, #D9C29A 100%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .hero-name.is-split .word { background: none; }
 .hero-name .word { display: inline-block; white-space: nowrap; }
-.hero-name .char-mask { display: inline-block; overflow: hidden; padding: 0 .02em .1em; margin: 0 -.02em -.1em; vertical-align: bottom; }
-.hero-name .char { display: inline-block; }
+.hero-name.is-split .word { overflow: hidden; padding-bottom: .1em; margin-bottom: -.1em; vertical-align: bottom; }
+.hero-name.intro-done .word { overflow: visible; }
+.hero-name .word-in { display: inline-block; }
 
 /* monogram strokes */
 .mono line { stroke: currentColor; stroke-linecap: square; }
@@ -297,12 +298,11 @@
 
 /* ---------- Nome: cada letra em camada própria, sem corte no pulo ---------- */
 .hero-name { will-change: transform; }
-.hero-name .char { will-change: transform; backface-visibility: hidden; transform: translateZ(0); }
-.hero-name.intro-done .char-mask { overflow: visible; }
+
 
 /* ---------- "Dra." pequeno, alto, antes do E ---------- */
 .hero-name .word-title { font-size: .27em; line-height: 1; vertical-align: top; margin-right: .16em; margin-top: .2em; letter-spacing: .02em; }
-.hero-name .word-title .char-mask { vertical-align: top; }
+.hero-name.is-split .word-title { vertical-align: top; }
 
 /* ---------- Barra do menu ---------- */
 .header-inner { transition: height .5s var(--ease-out); }

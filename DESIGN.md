@@ -231,7 +231,7 @@ Some values sit outside the palette and are never reused as colours:
 **Section markers** (`.kicker`): Outfit 500, 0.78rem, 0.26em tracking, uppercase, in the band accent, a tabular number then the label, followed by a 3.5rem rule.
 
 ### Hierarchy
-- **Display name** (Anton 400, uppercase, line-height 0.88, 0.004em): the hero name, broken onto two lines, "ELIZANDRA / GIRARDON", preceded by a small "DRA." at 0.27em, top-aligned before the E, with the same metal fill and the same rise, hop and wave motion. It uses `display-name-sm` below 1024px and `display-name` from 1024px. Its fill is a vertical metallic gradient clipped to the letters: #FFFFFF at 0%, #EFE8DB at 34%, #A8A296 at 68% and #D9C29A at 100%.
+- **Display name** (Anton 400, uppercase, line-height 0.88, 0.004em): the hero name, broken onto two lines, "ELIZANDRA / GIRARDON", preceded by a small "DRA." at 0.27em, top-aligned before the E, with the same metal fill. Since 2026-10-27 the name is animated as three pieces (Dra. / Elizandra / Girardon) rising out of masks, 0.12s apart; the per-letter split, letter hops and the periodic wave were removed for performance. It uses `display-name-sm` below 1024px and `display-name` from 1024px. Its fill is a vertical metallic gradient clipped to the letters: #FFFFFF at 0%, #EFE8DB at 34%, #A8A296 at 68% and #D9C29A at 100%.
 - **Display** (400, line-height 1): the two practice-area section titles, "Agronegócio" and "Bancário". Larger statement headings use the same face at clamp(2.4rem, 5.2vw, 5.25rem) beside the statue and at clamp(2.6rem, 6vw, 5.75rem) in the closing band, held to 16 to 18ch. The office statement that lights word by word runs at clamp(2.1rem, 4.4vw, 4.25rem).
 - **Headline** (400, line-height 1.02): standard section headings.
 - **Marquee** (400 italic, line-height 1.1): the running band of practice areas, in ink with monogram separators.
@@ -343,7 +343,7 @@ The stage layers back to front: dimmed facade, field lines, metallic name, accen
 - **halo:** up to 45px by 30px (1.8s)
 - **facade:** up to 13px (2s)
 
-Hovering a letter of the name makes it hop 14%. The credentials row (OAB/RS, OAB/SP, 24 years in the financial system) sits under a 1px accent rule at 0.3, in tabular nav type.
+The credentials row (OAB/RS, OAB/SP, 24 years in the financial system) sits under a 1px accent rule at 0.3, in tabular nav type.
 
 ### Lady Justice
 A bronze Lady Justice, blindfolded and raising the scales, cut out from an Unsplash photograph. She stands at the right of the practice-areas intro on ground, with an accent glow behind her and her foot and left edge feathered into the field. She rises in on entrance (2s, expo.out) as the glow blooms (2.6s). On scroll she lifts 60px and leans -1.5 degrees. On a fine pointer she turns up to 5 degrees on rotationY and shifts up to 15px against the mouse (1.4s). She is used once; the copy beside her reads her two pans as the bank and the client.
@@ -381,7 +381,7 @@ The EG mark is six accent SVG lines with square caps. It uses a 1.6 stroke in th
 A 56px accent circle with the ground WhatsApp mark, fixed bottom right. A 1px accent ring pulses out from it continuously, scaling from 1 to 1.8 and fading from 0.8 to 0 over 2.8s. It is magnetic on a fine pointer and lifts 3px on hover. At desktop it stays hidden while the hero is in view.
 
 ### Named Rules
-**The Pointer Layer Rule.** The cursor, magnetism, tilt, glare, figure follow and letter hops exist only on a fine, hovering pointer. Touch users get the same page with scroll-driven motion alone, and nothing they need is hidden behind a hover.
+**The Pointer Layer Rule.** Magnetism, tilt and figure follow exist only on a fine, hovering pointer. Touch users get the same page with scroll-driven motion alone, and nothing they need is hidden behind a hover.
 
 ## Do's and Don'ts
 
@@ -410,4 +410,4 @@ A 56px accent circle with the ground WhatsApp mark, fixed bottom right. A 1px ac
 
 ## Performance Rules (2026-10-27)
 
-Native scrolling only (no Lenis); no custom cursor; no `mix-blend-mode` on fixed elements; tilt animates transform only (the glare was removed because it repainted the photo on every mouse move); mouse listeners are passive; the ano-safra story clock sleeps when no illustration is on screen; pinned and scrubbed scenes use scrub 0.3 or `true`; scroll unlocks when the preloader curtain lifts (~2s), not at the end of the hero intro.
+Native scrolling only (no Lenis); no custom cursor; no `mix-blend-mode` on fixed elements; tilt animates transform only (the glare was removed because it repainted the photo on every mouse move); the hero name animates as 3 words, never per letter (was ~19 GPU layers with gradient text); mouse listeners are passive; the ano-safra story clock sleeps when no illustration is on screen; pinned and scrubbed scenes use scrub 0.3 or `true`; scroll unlocks when the preloader curtain lifts (~2s), not at the end of the hero intro.
