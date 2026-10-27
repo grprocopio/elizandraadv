@@ -1,0 +1,14 @@
+{
+  "name": "elizandra-girardon-advocacia",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/site.css -o ./assets/css/site.css --minify",
+    "watch:css": "tailwindcss -i ./src/site.css -o ./assets/css/site.css --watch",
+    "build:js": "terser assets/js/main.js -c -m -o assets/js/main.min.js",
+    "build": "npm run build:css && npm run build:js"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17",
+    "terser": "5.36.0"
+  }
+}

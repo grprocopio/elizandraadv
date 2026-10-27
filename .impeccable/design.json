@@ -1,0 +1,509 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-25T20:00:00-03:00",
+  "title": "Design System: Elizandra Girardon Advocacia",
+  "extensions": {
+    "colorMeta": {
+      "navy-950": {
+        "role": "neutral",
+        "displayName": "Midnight Ledger",
+        "canonical": "#06112A",
+        "tonalRamp": [
+          "#06112A",
+          "#0A1B38",
+          "#0E2244",
+          "#132B52",
+          "#1D3B6B",
+          "#2A4675",
+          "#5A6F93",
+          "#B8C3D6"
+        ]
+      },
+      "navy-900": {
+        "role": "neutral",
+        "displayName": "Bank Navy",
+        "canonical": "#0A1B38",
+        "tonalRamp": [
+          "#06112A",
+          "#0A1B38",
+          "#0E2244",
+          "#132B52",
+          "#1D3B6B",
+          "#2A4675",
+          "#5A6F93",
+          "#B8C3D6"
+        ]
+      },
+      "navy-850": {
+        "role": "neutral",
+        "displayName": "Vault Navy",
+        "canonical": "#0E2244",
+        "tonalRamp": [
+          "#06112A",
+          "#0A1B38",
+          "#0E2244",
+          "#132B52",
+          "#1D3B6B",
+          "#2A4675",
+          "#5A6F93",
+          "#B8C3D6"
+        ]
+      },
+      "navy-800": {
+        "role": "neutral",
+        "displayName": "Statement Navy",
+        "canonical": "#132B52",
+        "tonalRamp": [
+          "#06112A",
+          "#0A1B38",
+          "#0E2244",
+          "#132B52",
+          "#1D3B6B",
+          "#2A4675",
+          "#5A6F93",
+          "#B8C3D6"
+        ]
+      },
+      "ivory": {
+        "role": "neutral",
+        "displayName": "Paper Ivory",
+        "canonical": "#F4EFE5",
+        "tonalRamp": [
+          "#2B2822",
+          "#4A463E",
+          "#6E695F",
+          "#958F84",
+          "#BDB6A9",
+          "#E9E1D2",
+          "#F4EFE5",
+          "#FBF8F2"
+        ]
+      },
+      "ivory-muted": {
+        "role": "neutral",
+        "displayName": "Steel Mist",
+        "canonical": "#B8C3D6",
+        "tonalRamp": [
+          "#1E2533",
+          "#323C4F",
+          "#4A566C",
+          "#66738A",
+          "#8592A9",
+          "#B8C3D6",
+          "#D4DBE6",
+          "#EEF1F6"
+        ]
+      },
+      "amber": {
+        "role": "primary",
+        "displayName": "Harvest Amber",
+        "canonical": "#D8A25A",
+        "tonalRamp": [
+          "#3A2408",
+          "#5E3D12",
+          "#8A5A1E",
+          "#B07D3A",
+          "#D8A25A",
+          "#E9C690",
+          "#F3DEB9",
+          "#FAF0DD"
+        ]
+      },
+      "amber-soft": {
+        "role": "primary",
+        "displayName": "Pale Straw",
+        "canonical": "#E9C690",
+        "tonalRamp": [
+          "#3A2408",
+          "#5E3D12",
+          "#8A5A1E",
+          "#B07D3A",
+          "#D8A25A",
+          "#E9C690",
+          "#F3DEB9",
+          "#FAF0DD"
+        ]
+      }
+    },
+    "nonPaletteValues": [
+      {
+        "name": "hero-name-metal",
+        "value": "linear-gradient(180deg, #FFFFFF 0%, #EFE8DB 34%, #A8A296 68%, #D9C29A 100%)",
+        "purpose": "Metallic finish clipped to the hero name letters. Owner-sanctioned exception to the no-gradient-text rule, hero name only; the stops are not palette colours."
+      },
+      {
+        "name": "mask-full",
+        "value": "#000",
+        "purpose": "Alpha-mask stop meaning fully shown, on the hero portrait (22% bottom, 30% left), statue (26% bottom, 14% left) and CTA cut-out (22% bottom). Coverage only; never paints."
+      },
+      {
+        "name": "mask-partial",
+        "value": "rgba(0,0,0,.35)",
+        "purpose": "Alpha-mask stop meaning 35% shown, at 12% of the hero portrait left fade. Coverage only."
+      },
+      {
+        "name": "hero-bg-exposure",
+        "value": "opacity .24; filter saturate(.75) brightness(.92); shades radial-gradient(ellipse at 50% 42%, rgba(10,27,56,.15), rgba(10,27,56,.72) 78%) + linear-gradient(to bottom, rgba(10,27,56,.65), rgba(10,27,56,0) 28%, rgba(10,27,56,.35) 68%, #0A1B38 100%)",
+        "purpose": "Office facade behind the hero at low exposure; shades are navy-900 at alpha."
+      },
+      {
+        "name": "justice-light",
+        "value": "radial-gradient(closest-side, rgba(216,162,90,.34), rgba(216,162,90,.12) 55%, rgba(216,162,90,0) 80%)",
+        "purpose": "Amber light behind the Lady Justice statue; statue filter saturate(1.1) contrast(1.06)."
+      },
+      {
+        "name": "tilt-glare",
+        "value": "radial-gradient(circle at var(--gx) var(--gy), rgba(255,238,210,.28), rgba(255,238,210,0) 55%)",
+        "purpose": "Warm light that follows the pointer over tilting images. Light, not a palette colour."
+      },
+      {
+        "name": "scrollbar-thumb",
+        "value": "#2A4675 on #06112A track, 10px wide, 10px radius, 2px navy-950 border",
+        "purpose": "Browser chrome only."
+      }
+    ],
+    "typographyMeta": {
+      "display-name": {
+        "displayName": "Display Name",
+        "purpose": "Hero name in Anton capitals on two lines with the metallic gradient fill, from 1024px; left-aligned at 14svh behind the portrait."
+      },
+      "display-name-sm": {
+        "displayName": "Display Name (mobile)",
+        "purpose": "Hero name below 1024px, centred at the foot of the stage in front of the portrait."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "Practice-area section titles; statement headings use the same face at clamp(2.4rem, 5.2vw, 5.25rem) beside the statue and clamp(2.6rem, 6vw, 5.75rem) in the closing band; the scroll-lit office statement at clamp(2.1rem, 4.4vw, 4.25rem)."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Standard section headings."
+      },
+      "marquee": {
+        "displayName": "Marquee",
+        "purpose": "Italic practice areas running across the marquee band, in ivory."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Clause rows; FAQ questions one step down at clamp(1.3rem, 2vw, 1.7rem); timeline stage names at 2.4rem."
+      },
+      "subtitle": {
+        "displayName": "Subtitle",
+        "purpose": "Italic Pale Straw hero practice line below 1024px."
+      },
+      "subtitle-lg": {
+        "displayName": "Subtitle (desktop)",
+        "purpose": "Italic Pale Straw hero practice line from 1024px."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Amber statistics with tabular lining numerals; the preloader counter uses the same treatment at 3rem, amber 0.7."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default reading text."
+      },
+      "body-long": {
+        "displayName": "Body Long",
+        "purpose": "Long prose, capped at 44 to 62ch."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Secondary single lines: clause practice areas, statistic labels, hero credential line."
+      },
+      "action": {
+        "displayName": "Action",
+        "purpose": "Primary button labels and drawn-underline links; timeline remedy lines at the same size, weight 400."
+      },
+      "nav": {
+        "displayName": "Nav",
+        "purpose": "Desktop header links and the tabular hero credentials row."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Data labels and registration lines in Steel Mist or Pale Straw."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "Logotype in capitals beside the monogram."
+      },
+      "wordmark-sub": {
+        "displayName": "Wordmark Sub",
+        "purpose": "The ADVOCACIA line; the cursor label uses the same size at weight 500, 0.14em, capitals."
+      }
+    },
+    "shadows": [
+      {
+        "name": "slab-lift",
+        "value": "0 12px 28px -14px rgba(2, 6, 16, .8)",
+        "purpose": "Primary button at rest."
+      },
+      {
+        "name": "slab-lift-hover",
+        "value": "0 18px 32px -16px rgba(2, 6, 16, .9)",
+        "purpose": "Primary button on hover, with a 2px rise."
+      },
+      {
+        "name": "float",
+        "value": "0 14px 30px -10px rgba(3, 8, 20, .75)",
+        "purpose": "Floating WhatsApp button."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All CSS state transitions (0.4s buttons, 0.45s rows, menu and cursor, 0.5s header and glare, 0.6s clause phrase indent, 0.7s clause sweep and drawn rule), FAQ height (0.6s) and the WhatsApp pulse."
+      },
+      {
+        "name": "gsap-expo-out",
+        "value": "expo.out",
+        "purpose": "Entrances: masked word reveals (1.3s, stagger 0.04), hero name characters (1.4s, stagger 0.035), fades (1.2s, y 24 to 40px), header hide and return (0.6s). Statue entrance (2s, yPercent 12, scale 1.08) and CTA cut-out (1.8s, yPercent 14)."
+      },
+      {
+        "name": "gsap-expo-in-out",
+        "value": "expo.inOut",
+        "purpose": "Drawn rules (scaleX from left, 1.8s), image clip-path reveals (1.6s) and the preloader wipe (1.1s)."
+      },
+      {
+        "name": "stroke-draw",
+        "value": "power2.inOut",
+        "purpose": "Monogram strokes drawn via stroke-dashoffset, 0.9 to 1.8s, stagger 0.09 to 0.15; the preloader counter 0 to 100 over 1.3s."
+      },
+      {
+        "name": "hero-bg-settle",
+        "value": "power2.out, 3s, scale 1.12 to 1, opacity 0 to 1",
+        "purpose": "Hero facade background on entrance."
+      },
+      {
+        "name": "pointer-follow",
+        "value": "power3.out quickTo",
+        "purpose": "Cursor ring 0.5s (dot 0.08s), magnetic pull 0.6s, tilt 0.8s, hero portrait 1.2s (x 11px, rotationY 3.5deg), hero name 1.4s (17px), statue 1.4s (rotationY 5deg, x 15px), halo 1.8s, hero facade 2s (13px)."
+      },
+      {
+        "name": "magnetic-return",
+        "value": "elastic.out(1, 0.4), 1s",
+        "purpose": "Magnetic buttons and the WhatsApp float springing home on leave. The only elastic curve in the system."
+      },
+      {
+        "name": "letter-hop",
+        "value": "power2.out, yPercent -14, 0.35s yoyo",
+        "purpose": "Hero name letters on hover; no colour change, so the metallic fill stays."
+      },
+      {
+        "name": "wa-pulse",
+        "value": "2.8s ease-out infinite, scale 1 to 1.8, opacity 0.8 to 0",
+        "purpose": "Pulse ring around the floating WhatsApp button."
+      },
+      {
+        "name": "marquee",
+        "value": "38s linear loop; timeScale up to 7x from scroll velocity, sign from scroll direction, easing back over 1.4s",
+        "purpose": "Practice-area band."
+      },
+      {
+        "name": "scrub",
+        "value": "ScrollTrigger scrub",
+        "purpose": "Reading progress (0.3), timeline track and progress (0.8), scroll-lit words (opacity 0.16 to 1, stagger 0.1), hero parallax (facade yPercent 12, portrait, name, halo), statue (y -60, rotate -1.5deg), facade image parallax."
+      },
+      {
+        "name": "smooth-scroll",
+        "value": "Lenis lerp 0.09; anchor scroll 1.6s, offset -72px",
+        "purpose": "Smooth scroll; stopped during the preloader and while the mobile menu is open."
+      },
+      {
+        "name": "motion-policy",
+        "value": "motion-ready class set in head; removed if GSAP has not started within 3s",
+        "purpose": "Content renders in its final state without JS or libraries. Motion runs regardless of prefers-reduced-motion, by the owner's decision."
+      },
+      {
+        "name": "pointer-gate",
+        "value": "(hover: hover) and (pointer: fine)",
+        "purpose": "Cursor, magnetism, tilt, glare, hero and statue follow, letter hops."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Hero Name",
+      "kind": "custom",
+      "refersTo": "display-name",
+      "description": "Anton capitals on two lines with the owner-sanctioned metallic gradient clipped to text. Hero only.",
+      "html": "<h1 class=\"ds-hero-name\" aria-label=\"Elizandra Girardon\"><span>Elizandra</span><br><span>Girardon</span></h1>",
+      "css": ".ds-hero-name { margin: 0; padding: 2rem; background-color: #0A1B38; font-family: Anton, 'Bebas Neue', Impact, sans-serif; font-weight: 400; text-transform: uppercase; font-size: clamp(4.4rem, 12vw, 9rem); line-height: .86; letter-spacing: .004em; } .ds-hero-name span { display: inline-block; background: linear-gradient(180deg, #FFFFFF 0%, #EFE8DB 34%, #A8A296 68%, #D9C29A 100%); -webkit-background-clip: text; background-clip: text; color: transparent; transition: transform .35s cubic-bezier(0.16,1,0.3,1); } .ds-hero-name span:hover { transform: translateY(-6%); }"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Amber slab with navy ink and drawn arrow; every WhatsApp action. Magnetic on fine pointers with an elastic return (JS).",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Conversar pelo WhatsApp <svg class=\"ds-btn-arrow\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M1 8h13M9 3l5 5-5 5\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 0.75rem; background: #D8A25A; color: #06112A; padding: 1rem 1.5rem; font-family: Outfit, system-ui, sans-serif; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.025em; text-decoration: none; border-radius: 0; box-shadow: 0 12px 28px -14px rgba(2,6,16,.8); transition: background-color .4s cubic-bezier(0.16,1,0.3,1), transform .4s cubic-bezier(0.16,1,0.3,1), box-shadow .4s cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary .ds-btn-arrow { transition: transform .4s cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover { background: #E9C690; transform: translateY(-2px); box-shadow: 0 18px 32px -16px rgba(2,6,16,.9); } .ds-btn-primary:hover .ds-btn-arrow { transform: translateX(4px); } .ds-btn-primary:active { transform: translateY(0); } .ds-btn-primary:focus-visible { outline: 2px solid #D8A25A; outline-offset: 4px; border-radius: 2px; }"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Hairline-framed secondary action.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\">Ver no mapa</a>",
+      "css": ".ds-btn-line { display: inline-flex; align-items: center; gap: 0.75rem; background: transparent; border: 1px solid rgba(244,239,229,.3); color: #F4EFE5; padding: 0.75rem 1.25rem; font-family: Outfit, system-ui, sans-serif; font-size: 0.9rem; letter-spacing: 0.025em; text-decoration: none; border-radius: 0; transition: border-color .4s cubic-bezier(0.16,1,0.3,1), color .4s cubic-bezier(0.16,1,0.3,1); } .ds-btn-line:hover { border-color: #D8A25A; color: #E9C690; } .ds-btn-line:focus-visible { outline: 2px solid #D8A25A; outline-offset: 4px; border-radius: 2px; }"
+    },
+    {
+      "name": "Contact Button",
+      "kind": "button",
+      "refersTo": "social-btn",
+      "description": "48px hairline circle with a line icon; fills amber on hover and focus. Magnetic on fine pointers (JS).",
+      "html": "<a class=\"ds-social\" href=\"#\" aria-label=\"Telefone\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 5.2 5.2l1.4-2.1 4.2 1.6V17a2.5 2.5 0 0 1-2.7 2.5C9.6 19 5 14.4 4.5 8.2A2.5 2.5 0 0 1 5 3.5z\"/></svg></a>",
+      "css": ".ds-social { display: inline-flex; width: 48px; height: 48px; align-items: center; justify-content: center; border: 1px solid rgba(216,162,90,.45); border-radius: 50%; color: #F4EFE5; background: transparent; transition: background-color .4s cubic-bezier(0.16,1,0.3,1), color .4s cubic-bezier(0.16,1,0.3,1), border-color .4s cubic-bezier(0.16,1,0.3,1); } .ds-social:hover, .ds-social:focus-visible { background: #D8A25A; color: #06112A; border-color: #D8A25A; } .ds-social:focus-visible { outline: 2px solid #D8A25A; outline-offset: 4px; }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Monogram wordmark and drawn-underline links on scrolled navy, with the 2px amber reading-progress bar on the bottom edge. Hides on scroll down, returns on scroll up (JS).",
+      "html": "<header class=\"ds-nav\"><span class=\"ds-nav-progress\" aria-hidden=\"true\"></span><a class=\"ds-nav-brand\" href=\"#\"><svg width=\"36\" height=\"36\" viewBox=\"45 23 34 33\" fill=\"none\" stroke=\"#D8A25A\" stroke-width=\"1.6\" stroke-linecap=\"square\" aria-hidden=\"true\"><line x1=\"47\" y1=\"25.5\" x2=\"68\" y2=\"25.5\"/><line x1=\"53.5\" y1=\"34.5\" x2=\"75\" y2=\"34.5\"/><line x1=\"53.5\" y1=\"34.5\" x2=\"53.5\" y2=\"54\"/><line x1=\"47\" y1=\"43.7\" x2=\"68\" y2=\"43.7\"/><line x1=\"76.5\" y1=\"43\" x2=\"76.5\" y2=\"54\"/><line x1=\"53.5\" y1=\"53.8\" x2=\"77\" y2=\"53.8\"/></svg><span class=\"ds-nav-word\"><span>ELIZANDRA GIRARDON</span><span class=\"ds-nav-sub\">ADVOCACIA</span></span></a><nav class=\"ds-nav-links\"><a href=\"#\">Escritório</a><a href=\"#\">Atuação</a><a href=\"#\">A Advogada</a><a href=\"#\">Dúvidas</a></nav></header>",
+      "css": ".ds-nav { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 5rem; padding: 0 3rem; background: rgba(6,17,42,.93); backdrop-filter: blur(14px) saturate(1.2); border-bottom: 1px solid rgba(216,162,90,.18); font-family: Outfit, system-ui, sans-serif; } .ds-nav-progress { position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: #D8A25A; transform-origin: left center; transform: scaleX(.35); } .ds-nav-brand { display: flex; align-items: center; gap: 0.75rem; color: #F4EFE5; text-decoration: none; } .ds-nav-word { display: flex; flex-direction: column; line-height: 1; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.28em; } .ds-nav-sub { margin-top: 0.375rem; font-size: 0.7rem; font-weight: 400; letter-spacing: 0.4em; color: #B8C3D6; } .ds-nav-links { display: flex; gap: 2.25rem; font-size: 0.92rem; } .ds-nav-links a { color: rgba(244,239,229,.85); text-decoration: none; background-image: linear-gradient(currentColor, currentColor); background-size: 0% 1px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size .5s cubic-bezier(0.16,1,0.3,1), color .3s; } .ds-nav-links a:hover, .ds-nav-links a:focus-visible { background-size: 100% 1px; color: #F4EFE5; }"
+    },
+    {
+      "name": "Custom Cursor",
+      "kind": "custom",
+      "refersTo": "cursor-ring",
+      "description": "Fine pointers only: 40px amber ring and 6px dot; 64px warm ring over links; 92px amber disc labelled WhatsApp or Mapa. Shown here in its three states side by side.",
+      "html": "<div class=\"ds-cursor-demo\"><span class=\"ds-cursor\"></span><span class=\"ds-cursor is-hover\"></span><span class=\"ds-cursor has-label\"><span>WhatsApp</span></span><span class=\"ds-cursor-dot\"></span></div>",
+      "css": ".ds-cursor-demo { display: flex; align-items: center; gap: 2rem; padding: 2rem; background: #0A1B38; } .ds-cursor { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid rgba(216,162,90,.7); border-radius: 50%; transition: width .45s cubic-bezier(0.16,1,0.3,1), height .45s cubic-bezier(0.16,1,0.3,1), background-color .45s cubic-bezier(0.16,1,0.3,1); } .ds-cursor:hover, .ds-cursor.is-hover { width: 64px; height: 64px; background: rgba(216,162,90,.12); } .ds-cursor.has-label { width: 92px; height: 92px; background: #D8A25A; border-color: #D8A25A; } .ds-cursor span { font-family: Outfit, system-ui, sans-serif; font-size: .7rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #06112A; } .ds-cursor-dot { width: 6px; height: 6px; border-radius: 50%; background: #D8A25A; }"
+    },
+    {
+      "name": "Marquee Band",
+      "kind": "custom",
+      "refersTo": "marquee-item",
+      "description": "Full-bleed navy-950 strip of Bodoni italic practice areas with monogram separators; speed and direction follow scroll velocity (JS). CSS loop shown as a stand-in.",
+      "html": "<div class=\"ds-marquee\"><div class=\"ds-marquee-track\"><span class=\"ds-mq-item\">Crédito rural</span><svg class=\"ds-mq-sep\" viewBox=\"45 23 34 33\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"square\" aria-hidden=\"true\"><line x1=\"47\" y1=\"25.5\" x2=\"68\" y2=\"25.5\"/><line x1=\"53.5\" y1=\"34.5\" x2=\"75\" y2=\"34.5\"/><line x1=\"53.5\" y1=\"34.5\" x2=\"53.5\" y2=\"54\"/><line x1=\"47\" y1=\"43.7\" x2=\"68\" y2=\"43.7\"/><line x1=\"76.5\" y1=\"43\" x2=\"76.5\" y2=\"54\"/><line x1=\"53.5\" y1=\"53.8\" x2=\"77\" y2=\"53.8\"/></svg><span class=\"ds-mq-item\">Superendividamento</span><svg class=\"ds-mq-sep\" viewBox=\"45 23 34 33\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"square\" aria-hidden=\"true\"><line x1=\"47\" y1=\"25.5\" x2=\"68\" y2=\"25.5\"/><line x1=\"53.5\" y1=\"34.5\" x2=\"75\" y2=\"34.5\"/><line x1=\"53.5\" y1=\"34.5\" x2=\"53.5\" y2=\"54\"/><line x1=\"47\" y1=\"43.7\" x2=\"68\" y2=\"43.7\"/><line x1=\"76.5\" y1=\"43\" x2=\"76.5\" y2=\"54\"/><line x1=\"53.5\" y1=\"53.8\" x2=\"77\" y2=\"53.8\"/></svg><span class=\"ds-mq-item\">Fraudes bancárias</span></div></div>",
+      "css": ".ds-marquee { overflow: hidden; background: #06112A; border-top: 1px solid rgba(216,162,90,.2); border-bottom: 1px solid rgba(216,162,90,.2); padding: 2rem 0; } .ds-marquee-track { display: flex; align-items: center; width: max-content; animation: ds-mq 38s linear infinite; } .ds-mq-item { font-family: 'Bodoni Moda', Didot, Georgia, serif; font-style: italic; font-size: clamp(1.8rem, 4vw, 3.4rem); line-height: 1.1; white-space: nowrap; color: #F4EFE5; padding: 0 2.2rem; } .ds-mq-sep { width: 1.5rem; height: 1.5rem; flex: none; color: #D8A25A; } @keyframes ds-mq { to { transform: translateX(-50%); } }"
+    },
+    {
+      "name": "Clause Row",
+      "kind": "custom",
+      "refersTo": "clause-row",
+      "description": "Banking problem in the client's words as a ruled WhatsApp link; amber sweep, 12px indent and drawn rule on hover.",
+      "html": "<a class=\"ds-clause\" href=\"#\"><span class=\"ds-clause-q\">Juros e tarifas acima do que foi combinado</span><span class=\"ds-clause-area\">Revisão de contratos bancários</span><svg class=\"ds-clause-go\" width=\"20\" height=\"20\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" aria-hidden=\"true\"><path d=\"M1 8h13M9 3l5 5-5 5\"/></svg><span class=\"ds-clause-rule\"><span></span></span></a>",
+      "css": ".ds-clause { position: relative; display: grid; grid-template-columns: 6fr 5fr 1fr; align-items: center; gap: 2rem; padding: 1.75rem 1rem; color: #F4EFE5; text-decoration: none; background: #132B52; } .ds-clause::before { content: ''; position: absolute; inset: 0; z-index: 0; background: rgba(216,162,90,.09); transform: scaleX(0); transform-origin: left center; transition: transform .7s cubic-bezier(0.16,1,0.3,1); } .ds-clause > span:not(.ds-clause-rule), .ds-clause > svg { position: relative; z-index: 1; } .ds-clause-q { font-family: 'Bodoni Moda', Didot, Georgia, serif; font-size: 2rem; line-height: 1.375; letter-spacing: -0.02em; transition: transform .6s cubic-bezier(0.16,1,0.3,1), color .4s; } .ds-clause-area { font-family: Outfit, system-ui, sans-serif; font-size: 0.98rem; color: #E9C690; } .ds-clause-go { justify-self: end; transition: transform .45s cubic-bezier(0.16,1,0.3,1), color .3s; } .ds-clause-rule { position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: rgba(244,239,229,.15); } .ds-clause-rule span { position: absolute; inset: 0; background: #D8A25A; transform: scaleX(0); transform-origin: left; transition: transform .7s cubic-bezier(0.16,1,0.3,1); } .ds-clause:hover::before, .ds-clause:focus-visible::before { transform: scaleX(1); } .ds-clause:hover .ds-clause-q, .ds-clause:focus-visible .ds-clause-q { transform: translateX(12px); color: #E9C690; } .ds-clause:hover .ds-clause-go, .ds-clause:focus-visible .ds-clause-go { transform: translateX(6px); color: #D8A25A; } .ds-clause:hover .ds-clause-rule span, .ds-clause:focus-visible .ds-clause-rule span { transform: scaleX(1); } .ds-clause:focus-visible { outline: 2px solid #D8A25A; outline-offset: 4px; }"
+    },
+    {
+      "name": "Ano-safra Stage",
+      "kind": "custom",
+      "refersTo": "safra-stage",
+      "description": "Timeline stage on an amber spine with a rotated-square marker; vertical variant shown.",
+      "html": "<ol class=\"ds-safra\"><li class=\"ds-stage is-active\"><h4>Contratação</h4><p>Custeio, investimento, cédula rural ou CPR: o crédito é assinado.</p><p class=\"ds-stage-remedy\">Análise do contrato e das garantias.</p></li><li class=\"ds-stage\"><h4>Plantio</h4><p>Juros, encargos e seguros embutidos começam a pesar.</p><p class=\"ds-stage-remedy\">Revisão de encargos no crédito rural.</p></li></ol>",
+      "css": ".ds-safra { list-style: none; margin: 0; padding: 2rem; background: #06112A; font-family: Outfit, system-ui, sans-serif; } .ds-stage { position: relative; padding: 0 0 3rem 2.25rem; max-width: 40rem; border-left: 1px solid rgba(216,162,90,.3); color: rgba(244,239,229,.8); } .ds-stage:last-child { padding-bottom: .5rem; } .ds-stage::before { content: ''; position: absolute; left: -5px; top: .55rem; width: 9px; height: 9px; background: #0A1B38; border: 1px solid #D8A25A; transform: rotate(45deg); transition: background-color .5s cubic-bezier(0.16,1,0.3,1); } .ds-stage.is-active::before, .ds-stage:hover::before { background: #D8A25A; outline: 1px solid rgba(216,162,90,.4); outline-offset: 4px; } .ds-stage h4 { margin: 0; font-family: 'Bodoni Moda', Didot, Georgia, serif; font-weight: 400; font-size: 2.4rem; line-height: 1; letter-spacing: -0.02em; color: #F4EFE5; } .ds-stage p { margin: 1rem 0 0; } .ds-stage-remedy { border-top: 1px solid rgba(244,239,229,.1); padding-top: 1rem; font-size: 0.95rem; color: #E9C690; }"
+    },
+    {
+      "name": "FAQ Item",
+      "kind": "custom",
+      "refersTo": "faq-item",
+      "description": "Ruled native disclosure with an amber two-line plus that closes to a minus.",
+      "html": "<details class=\"ds-faq\"><summary><span class=\"ds-faq-q\">O que é superendividamento?</span><span class=\"ds-faq-icon\" aria-hidden=\"true\"></span></summary><p>É a situação de quem, de boa-fé, não consegue pagar o conjunto das suas dívidas de consumo.</p></details>",
+      "css": ".ds-faq { border-top: 1px solid rgba(244,239,229,.1); border-bottom: 1px solid rgba(244,239,229,.1); background: #0A1B38; color: #F4EFE5; padding: 0 1rem; } .ds-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.5rem 0; list-style: none; cursor: pointer; } .ds-faq summary::-webkit-details-marker { display: none; } .ds-faq-q { font-family: 'Bodoni Moda', Didot, Georgia, serif; font-size: 1.7rem; line-height: 1.375; transition: color .3s; } .ds-faq summary:hover .ds-faq-q { color: #E9C690; } .ds-faq summary:focus-visible { outline: 2px solid #D8A25A; outline-offset: 4px; } .ds-faq-icon { position: relative; width: 14px; height: 14px; flex: none; } .ds-faq-icon::before, .ds-faq-icon::after { content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 1px; background: #D8A25A; transition: transform .5s cubic-bezier(0.16,1,0.3,1); } .ds-faq-icon::after { transform: rotate(90deg); } .ds-faq[open] .ds-faq-icon::after { transform: rotate(0deg); } .ds-faq p { max-width: 62ch; margin: 0; padding-bottom: 1.75rem; font-family: Outfit, system-ui, sans-serif; line-height: 1.75; color: rgba(244,239,229,.8); }"
+    },
+    {
+      "name": "Floating WhatsApp",
+      "kind": "button",
+      "refersTo": "whatsapp-float",
+      "description": "56px amber circle with a continuous amber pulse ring; magnetic on fine pointers (JS).",
+      "html": "<a class=\"ds-wa-float\" href=\"#\" aria-label=\"Conversar pelo WhatsApp\"><svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.41A11.82 11.82 0 0 0 12.05 0z\"/></svg></a>",
+      "css": ".ds-wa-float { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 9999px; background: #D8A25A; color: #06112A; box-shadow: 0 14px 30px -10px rgba(3,8,20,.75); transition: transform .5s cubic-bezier(0.16,1,0.3,1); } .ds-wa-float::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 1px solid #D8A25A; animation: ds-wa-pulse 2.8s cubic-bezier(0.16,1,0.3,1) infinite; } .ds-wa-float:hover { transform: translateY(-3px); } .ds-wa-float:focus-visible { outline: 2px solid #D8A25A; outline-offset: 4px; } @keyframes ds-wa-pulse { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(1.8); opacity: 0; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Ruled Ledger at Night",
+    "overview": "A deep navy field runs edge to edge and is never broken by a white page. Structure on it is drawn, not built. Thin amber and ivory hairlines divide, underline and track progress. They share their straight-stroke vocabulary with the EG monogram, whose six strokes are redrawn as SVG lines that draw themselves when they appear. Type does the monumental work. Her name stands in tall Anton capitals with a cast-metal finish. Bodoni Moda at very large sizes carries section titles and the client's own phrasing of a problem. Outfit carries everything that must read calmly for an older visitor on a phone.\n\nDensity is low and the sections form bands. Each one is a full-width navy band, one step lighter or darker than its neighbour, with generous vertical padding. Amber is the only warm, saturated colour, and the lawyer's blazer in the hero photograph is the only red. Photography sits low in the field: the office facade dimmed behind the hero, and cut-outs (the lawyer twice, a bronze Lady Justice once) that feather into the navy. Motion is exponential and editorial: a drawn-monogram preloader, masked word reveals, drawn strokes, words that light as you read and a pinned timeline. On a mouse, the page also answers the hand. An amber ring follows the pointer, actions pull toward it, and figures and photographs turn under it. The page is complete and legible without any of it.\n\nThe system rejects the law-firm default of gavels and rows of equal boxed service cards. Content that would otherwise be cards is set as ruled rows or as stages on a timeline. The one classical emblem is a bronze Lady Justice, used once, to introduce the practice areas.",
+    "keyCharacteristics": [
+      "Navy ground in four tonal steps; sections band by tone, not by borders or shadows.",
+      "Amber is the single accent: actions, hairlines, figures, monogram, pointer, the light behind cut-outs.",
+      "Anton capitals for her name, Bodoni Moda at monumental scale for titles, an Outfit body in ivory.",
+      "Hairline rules, never boxes; square corners, with circles reserved for the WhatsApp float, the contact buttons and the pointer layer.",
+      "Drawn, masked, expo-out motion plus a fine-pointer interaction layer, with a full no-JS fallback."
+    ],
+    "rules": [
+      {
+        "name": "The One Red Rule",
+        "body": "Red exists only in the hero photograph. No token, rule, button or illustration is red.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Metal Rule",
+        "body": "Amber is the only accent hue. Hierarchy within it comes from alpha and from the amber / amber-soft pair, never from a second accent. The hero name's cast-metal finish is a material, not a second accent, and it appears nowhere else.",
+        "section": "colors"
+      },
+      {
+        "name": "The Banded Ground Rule",
+        "body": "Sections separate by stepping the navy tone (950 / 900 / 850 / 800), not by cards, borders around blocks or shadows.",
+        "section": "colors"
+      },
+      {
+        "name": "The Cast Name Rule",
+        "body": "The hero name is the only Anton and the only gradient-filled text in the system. The owner chose the finish from a reference image. It is sanctioned for the hero name alone and does not license gradient text anywhere else.",
+        "section": "typography"
+      },
+      {
+        "name": "The Italic Voice Rule",
+        "body": "Bodoni italic marks the client-facing voice: the hero subtitle, the marquee of practice areas and the list of who the office defends, separated by upright amber slashes.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Registration Rule",
+        "body": "OAB numbers, figures and counters always use tabular lining numerals.",
+        "section": "typography"
+      },
+      {
+        "name": "The Drawn Not Built Rule",
+        "body": "Structure is a 1px line, not a container. If a block needs separating, rule it; do not box it.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Feathered Cut-out Rule",
+        "body": "Every cut-out figure stands on the field, not in a frame. Its foot fades out through an alpha mask, and a radial amber light, never a box, sits behind it.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Pointer Layer Rule",
+        "body": "The cursor, magnetism, tilt, glare, figure follow and letter hops exist only on a fine, hovering pointer. Touch users get the same page with scroll-driven motion alone, and nothing they need is hidden behind a hover.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do separate sections by stepping the navy ground (950, 900, 850, 800) and separate content with 1px hairlines.",
+      "Do keep amber as the only accent and vary its strength by alpha; put Pale Straw (`amber-soft`) beside text.",
+      "Do set the hero name in Anton capitals with its metallic finish. Set titles and the client's own words in Bodoni Moda at weight 400 with negative tracking. Set running prose in Outfit at 1.06rem or larger. Single secondary lines step down to 0.92 to 0.98rem, and only the wordmark capitals and the cursor label go to 0.7rem.",
+      "Do stand cut-out figures on the field, with a feathered alpha-mask foot and a radial amber light behind them.",
+      "Do keep photographs behind type at low exposure (the hero facade at 0.24 opacity under navy shades).",
+      "Do route every action to WhatsApp through the amber slab, the line button, a clause row, a contact button or a drawn-underline link.",
+      "Do animate with the expo-out curve `cubic-bezier(0.16, 1, 0.3, 1)`: masked word reveals, rules drawn from the left, monogram strokes drawn in sequence. Use elastic.out(1, 0.4) only for the magnetic return.",
+      "Do ship the final, fully visible state in the markup. Hidden start states apply only under the `motion-ready` class, which is removed if GSAP and ScrollTrigger have not started within 3s. At the owner's request, motion runs whether or not the visitor's system asks for reduced motion.",
+      "Do gate every pointer effect behind `(hover: hover) and (pointer: fine)`.",
+      "Do set OAB registrations, figures and counters with tabular lining numerals."
+    ],
+    "donts": [
+      "Don't introduce red anywhere outside the hero photograph.",
+      "Don't use gavel imagery, and don't repeat the Lady Justice statue; she appears once, in the practice-areas intro.",
+      "Don't set services as a row of equal boxed cards; use ruled rows or the timeline.",
+      "Don't clip gradients to text anywhere except the hero name.",
+      "Don't round corners on content. Circles belong only to the WhatsApp float and its pulse ring, the contact buttons and the pointer layer. The 2px focus ring and the 10px scrollbar thumb are the only other exceptions.",
+      "Don't add hard, offset or coloured shadows; the two soft drop shadows are the whole vocabulary.",
+      "Don't add a second accent hue or a light page ground.",
+      "Don't treat mask stops, the hero name's metal stops or the tilt glare as palette colours."
+    ]
+  }
+}

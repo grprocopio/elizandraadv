@@ -1,0 +1,98 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-25T18:55:34.923Z",
+        "reason": "finish reviewer: full-bleed safra band with padded inner container, and hairline border-t rules over text, are intended"
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "src/site.css"
+        ],
+        "createdAt": "2026-10-25T19:54:32.633Z",
+        "reason": "user requested: metallic name lettering modelled on the user's reference image (DIGITAL DESIGNER), 2026-10-25"
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-25T19:55:16.128Z",
+        "reason": "user requested: metallic hero name lettering from the user's reference image, 2026-10-25"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#000",
+        "files": [
+          "src/site.css"
+        ],
+        "createdAt": "2026-10-25T20:00:31.241Z",
+        "reason": "documented in DESIGN.md as a non-palette value (alpha mask stop, hero-name metal stop or tilt glare)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(0,0,0,.35)",
+        "files": [
+          "src/site.css"
+        ],
+        "createdAt": "2026-10-25T20:00:31.793Z",
+        "reason": "documented in DESIGN.md as a non-palette value (alpha mask stop, hero-name metal stop or tilt glare)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#ffffff",
+        "files": [
+          "src/site.css"
+        ],
+        "createdAt": "2026-10-25T20:00:32.531Z",
+        "reason": "documented in DESIGN.md as a non-palette value (alpha mask stop, hero-name metal stop or tilt glare)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#efe8db",
+        "files": [
+          "src/site.css"
+        ],
+        "createdAt": "2026-10-25T20:00:33.191Z",
+        "reason": "documented in DESIGN.md as a non-palette value (alpha mask stop, hero-name metal stop or tilt glare)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#a8a296",
+        "files": [
+          "src/site.css"
+        ],
+        "createdAt": "2026-10-25T20:00:34.413Z",
+        "reason": "documented in DESIGN.md as a non-palette value (alpha mask stop, hero-name metal stop or tilt glare)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#d9c29a",
+        "files": [
+          "src/site.css"
+        ],
+        "createdAt": "2026-10-25T20:00:35.208Z",
+        "reason": "documented in DESIGN.md as a non-palette value (alpha mask stop, hero-name metal stop or tilt glare)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(255, 238, 210, .28)",
+        "files": [
+          "src/site.css"
+        ],
+        "createdAt": "2026-10-25T20:00:35.792Z",
+        "reason": "documented in DESIGN.md as a non-palette value (alpha mask stop, hero-name metal stop or tilt glare)"
+      }
+    ]
+  }
+}

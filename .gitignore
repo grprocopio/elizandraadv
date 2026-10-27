@@ -1,0 +1,8 @@
+node_modules/
+.impeccable/src/
+.impeccable/review/
+.impeccable/hook.cache.json
+__pycache__/
+*.pyc
+Thumbs.db
+.DS_Store
