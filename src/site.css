@@ -77,11 +77,6 @@
   }
   .h-sans { font-family: Outfit, system-ui, sans-serif; font-weight: 500; letter-spacing: -.035em; line-height: 1.02; }
   .hl { font-style: italic; color: rgb(var(--accent)); }
-  .num-outline {
-    font-family: Anton, Impact, sans-serif; font-weight: 400; line-height: .9;
-    color: transparent; -webkit-text-stroke: 1.2px rgb(var(--accent));
-  }
-
   /* Marcador de seção: "01 — O escritório" */
   .kicker {
     display: flex; align-items: center; gap: .9rem;

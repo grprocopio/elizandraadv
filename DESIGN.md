@@ -182,7 +182,7 @@ components:
 
 The page is a sequence of full-width bands that alternate dark and light: wine, bordô, sand, wine, wine-deep, sand, wine, sand, wine, bordô, wine-deep. No two neighbouring sections share a ground, so the eye always registers a new chapter. Structure inside each band is still drawn, not built: hairlines in the band's accent divide, underline and track progress, and the EG monogram's six strokes draw themselves.
 
-Type changes voice from section to section instead of repeating one large serif. Her name stands in Anton capitals with a cast-metal finish. Instrument Serif carries statements and the client's own phrasing (roman, and italic for the closing line). Outfit at weight 500, tightly tracked, carries the plain-spoken headings. Anton returns for the two specialties and the contact heading, paired with an outlined letter (A, B). Every section opens with a numbered marker ("01 — O escritório").
+Type changes voice from section to section instead of repeating one large serif. Her name stands in Anton capitals with a cast-metal finish. Instrument Serif carries statements and the client's own phrasing (roman, and italic for the closing line). Outfit at weight 500, tightly tracked, carries the plain-spoken headings. Anton returns for the two specialties and the contact heading. Every section opens with a numbered marker ("01 — O escritório").
 
 Photography: the red-suit portrait (waist-up) on wine in the hero, the bronze Lady Justice on wine, and the full-length white-suit cut-out on bordô in the closing band.
 
@@ -222,7 +222,7 @@ Some values sit outside the palette and are never reused as colours:
 
 ## Typography
 
-**Name Font:** Anton (with Bebas Neue, Impact, sans-serif), weight 400, uppercase: the hero name, the specialty headings (Agronegócio, Bancário), the contact heading, statistic figures and the outlined specialty letters.
+**Name Font:** Anton (with Bebas Neue, Impact, sans-serif), weight 400, uppercase: the hero name, the specialty headings (Agronegócio, Bancário), the contact heading and statistic figures.
 **Display Font:** Instrument Serif (with Georgia, serif), weight 400, roman and italic.
 **Body Font:** Outfit (with system-ui, sans-serif), weights 400 and 500; weight 500 at -0.035em is the "plain voice" heading (`h-sans`).
 
