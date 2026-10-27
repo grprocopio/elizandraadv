@@ -1,3 +1,10 @@
+/* Fontes hospedadas no próprio site (sem Google Fonts): mais rápido e sem serviço externo */
+@font-face { font-family: "Anton"; src: url("../fonts/anton-400.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Instrument Serif"; src: url("../fonts/instrument-serif-400.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Instrument Serif"; src: url("../fonts/instrument-serif-400-italic.woff") format("woff"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Outfit"; src: url("../fonts/outfit-400.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Outfit"; src: url("../fonts/outfit-500.woff") format("woff"); font-weight: 500; font-style: normal; font-display: swap; }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -393,3 +400,14 @@
   .safra-track { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 3.5rem; row-gap: .5rem; }
   .safra-stage { max-width: none; }
 }
+
+/* ---------- Cabeçalho: cabe inteiro de 1024 a 1279 px ---------- */
+.nav-link, .header-cta, .logo-name { white-space: nowrap; }
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .nav-link { padding: .55rem .7rem; font-size: .86rem; }
+  .header-cta { padding-left: .9rem; padding-right: .9rem; }
+  .logo-link .logo-name { letter-spacing: .2em; }
+}
+
+/* pré-carregador só no computador */
+@media (max-width: 1023px) { .motion-ready .preloader { display: none; } }

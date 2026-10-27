@@ -344,7 +344,9 @@
     return tl;
   };
 
-  if (introAllowed && preloader) {
+  // Pré-carregador só no computador: no celular a página abre direto (sinal fraco, visitante com pressa).
+  var wantPreloader = window.matchMedia('(min-width: 1024px)').matches;
+  if (introAllowed && preloader && wantPreloader) {
     document.documentElement.style.overflow = 'hidden';
     var pLines = $$('line', preloader);
     var pText = $$('[data-preloader-text]', preloader);
@@ -364,6 +366,7 @@
       .to(preloader, { yPercent: -100, duration: 0.7, ease: 'expo.inOut', onComplete: unlock }, 0.8)
       .add(heroIntro(), 0.95);
   } else if (introAllowed) {
+    if (preloader) preloader.style.display = 'none';
     heroIntro();
   } else {
     if (preloader) preloader.style.display = 'none';

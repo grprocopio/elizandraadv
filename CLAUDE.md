@@ -10,6 +10,7 @@ scrub numérico baixo (≤ 0,3). Rolagem liberada assim que a cortina do pré-ca
 O nome da hero anima em 3 palavras, nunca letra a letra (sem divisão por letra, sem pulos nem onda periódica).
 Sem `pin` do ScrollTrigger (nada de prender a rolagem) e sem parallax ligado à rolagem; revelações de fotos sem `clip-path`;
 `will-change` só no que se move sempre (retrato, faixa corrida, header).
+Fontes locais em `assets/fonts/` (não voltar ao Google Fonts). Pré-carregador só a partir de 1024 px.
 
 ## Fontes da verdade (nesta ordem)
 1. `PRODUCT.md`: público, objetivo (abrir conversa no WhatsApp) e regras da OAB (Provimento 205/2021).

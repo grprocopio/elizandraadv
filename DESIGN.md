@@ -373,6 +373,8 @@ Native disclosure rows, ruled at ink 0.10. Questions are set in Instrument Serif
 ### Statistics
 A three-column band ruled top and bottom at ink 0.10, with vertical hairline dividers. Accent Instrument Serif figures count up from zero above small ink labels.
 
+
+**Since 2026-10-27:** only the experience figure is a number ("24+", counted up). The other two cells show the bar registrations as large Anton state codes, "RS" and "SP", labelled with the full OAB numbers (kept on one line). The former "2 states" and "2 areas" figures were removed: they read as weak beside 24+ and "2 areas" contradicted the six specialisations listed below.
 ### Closing Band
 Ground-950, with the Instrument Serif heading, a short lead and the primary button at left. The lawyer stands at right in a white suit, cut out and feathered at the foot, on the bordô band, and rises in (14%, 1.8s, expo.out) as the band arrives. Behind her, at desktop, the monogram watermark draws itself.
 
@@ -413,3 +415,8 @@ A 56px accent circle with the ground WhatsApp mark, fixed bottom right. A 1px ac
 ## Performance Rules (2026-10-27)
 
 Native scrolling only (no Lenis); no custom cursor; no `mix-blend-mode` on fixed elements; tilt animates transform only (the glare was removed because it repainted the photo on every mouse move); the hero name animates as 3 words, never per letter (was ~19 GPU layers with gradient text); mouse listeners are passive; the ano-safra story clock sleeps when no illustration is on screen; no pinned scenes and no scroll-linked parallax (hero background, halo, portrait, name, statue and facade no longer move with scroll; only the reading-progress bar and the word-lighting statement are scrubbed); photos reveal with opacity and a 48px rise instead of clip-path; only the portrait and the name follow the mouse; lazy photos are decoded ahead of time during idle; the preloader lifts by ~1.5s; scroll unlocks when the preloader curtain lifts (~2s), not at the end of the hero intro.
+
+
+## Fonts and loading (2026-10-27)
+
+Anton, Instrument Serif (roman and italic) and Outfit (400, 500) are self-hosted in `assets/fonts/` as WOFF, subset to Latin and Portuguese characters (about 100 KB in total), with Anton and Outfit 400 preloaded. No Google Fonts request. The preloader runs only from 1024px; phones go straight to the hero intro. The header keeps every item on one line from 1024px (tighter nav padding between 1024 and 1279px).
