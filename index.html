@@ -161,8 +161,8 @@
       <nav class="nav-bar hidden lg:flex" aria-label="Principal" data-nav>
         <span class="nav-indicator" aria-hidden="true" data-nav-indicator></span>
         <a class="nav-link" href="#escritorio" data-spy><span class="nav-clip"><span class="nav-roll" data-text="Escritório">Escritório</span></span></a>
-        <a class="nav-link" href="#atuacao" data-spy><span class="nav-clip"><span class="nav-roll" data-text="Atuação">Atuação</span></span></a>
         <a class="nav-link" href="#advogada" data-spy><span class="nav-clip"><span class="nav-roll" data-text="A Advogada">A Advogada</span></span></a>
+        <a class="nav-link" href="#atuacao" data-spy><span class="nav-clip"><span class="nav-roll" data-text="Atuação">Atuação</span></span></a>
         <a class="nav-link" href="#duvidas" data-spy><span class="nav-clip"><span class="nav-roll" data-text="Dúvidas">Dúvidas</span></span></a>
         <a class="nav-link" href="#endereco" data-spy><span class="nav-clip"><span class="nav-roll" data-text="Contato">Contato</span></span></a>
       </nav>
@@ -185,8 +185,8 @@
       <div class="container-page relative flex min-h-full flex-col justify-between gap-10 pb-10 pt-6">
         <ul>
           <li><a class="m-link" href="#escritorio" data-spy><span class="display">Escritório</span><svg class="h-5 w-5 flex-none" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a></li>
-          <li><a class="m-link" href="#atuacao" data-spy><span class="display">Atuação</span><svg class="h-5 w-5 flex-none" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a></li>
           <li><a class="m-link" href="#advogada" data-spy><span class="display">A Advogada</span><svg class="h-5 w-5 flex-none" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a></li>
+          <li><a class="m-link" href="#atuacao" data-spy><span class="display">Atuação</span><svg class="h-5 w-5 flex-none" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a></li>
           <li><a class="m-link" href="#duvidas" data-spy><span class="display">Dúvidas</span><svg class="h-5 w-5 flex-none" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a></li>
           <li><a class="m-link" href="#endereco" data-spy><span class="display">Contato</span><svg class="h-5 w-5 flex-none" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a></li>
         </ul>
@@ -281,13 +281,46 @@
       </div>
     </section>
 
+    <!-- ================= A ADVOGADA ================= -->
+    <section id="advogada" class="bg-ground py-20 sm:py-24 lg:py-28" aria-labelledby="advogada-titulo">
+      <div class="container-page">
+        <p class="kicker mb-10"><span class="tabular">02</span>A advogada</p>
+
+        <div class="grid gap-14 lg:grid-cols-12 lg:gap-12">
+          <div class="lg:col-span-5">
+            <figure class="portrait-frame max-w-[26rem] overflow-hidden" data-reveal data-tilt>
+              <img class="aspect-[4/5] w-full object-cover object-[50%_32%]" src="assets/elizandra-perfil.webp" width="1067" height="1600" loading="lazy" decoding="async" alt="Dra. Elizandra Girardon sentada à mesa do escritório, de blazer branco, sorrindo, com estantes de livros ao fundo">
+            </figure>
+          </div>
+          <div class="lg:col-span-7">
+            <h2 id="advogada-titulo" class="display text-[clamp(2.4rem,4.6vw,4.25rem)] text-ink" data-split>Dra. Elizandra Girardon</h2>
+            <p class="tabular mt-4 text-sm tracking-wide text-accent-soft">Advogada fundadora · OAB/RS 100.183 · OAB/SP 543.297</p>
+            <div class="mt-8 max-w-[62ch] space-y-5 text-[1.06rem] leading-[1.75] text-ink/80" data-reveal>
+              <p>Possui mais de 24 anos de experiência no sistema financeiro, e sua principal atuação é voltada ao Direito Bancário e ao Direito do Agronegócio.</p>
+              <p>Sua atuação é pautada por estratégia, conhecimento técnico e proteção do patrimônio e da segurança financeira de seus clientes.</p>
+            </div>
+
+            <h3 class="mt-12 text-sm tracking-wide text-ink-muted">Especializações</h3>
+            <ul class="mt-5 grid gap-x-10 sm:grid-cols-2" data-specs>
+              <li class="flex items-baseline gap-4 border-b border-ink/10 py-3.5 text-ink"><span class="h-px w-5 flex-none translate-y-[-0.3em] bg-accent" aria-hidden="true"></span>Direito do Agronegócio</li>
+              <li class="flex items-baseline gap-4 border-b border-ink/10 py-3.5 text-ink"><span class="h-px w-5 flex-none translate-y-[-0.3em] bg-accent" aria-hidden="true"></span>Políticas Agrícolas</li>
+              <li class="flex items-baseline gap-4 border-b border-ink/10 py-3.5 text-ink"><span class="h-px w-5 flex-none translate-y-[-0.3em] bg-accent" aria-hidden="true"></span>Prorrogação de Dívidas Rurais</li>
+              <li class="flex items-baseline gap-4 border-b border-ink/10 py-3.5 text-ink"><span class="h-px w-5 flex-none translate-y-[-0.3em] bg-accent" aria-hidden="true"></span>Recuperação Judicial</li>
+              <li class="flex items-baseline gap-4 border-b border-ink/10 py-3.5 text-ink"><span class="h-px w-5 flex-none translate-y-[-0.3em] bg-accent" aria-hidden="true"></span>Direito Bancário</li>
+              <li class="flex items-baseline gap-4 border-b border-ink/10 py-3.5 text-ink"><span class="h-px w-5 flex-none translate-y-[-0.3em] bg-accent" aria-hidden="true"></span>Defesa do Executado</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= ATUAÇÃO ================= -->
     <section id="atuacao" aria-labelledby="atuacao-titulo">
-      <div class="justice relative overflow-hidden bg-ground" data-justice>
+      <div class="justice theme-light relative overflow-hidden bg-ground" data-justice>
         <div class="justice-light pointer-events-none absolute -right-[20%] top-[10%] aspect-square w-[110%] lg:right-[-6%] lg:top-[-6%] lg:w-[min(60rem,62vw)]" aria-hidden="true" data-justice-light></div>
         <div class="container-page relative z-10 grid lg:min-h-[40rem] lg:grid-cols-12 lg:items-center">
           <div class="pt-20 sm:pt-24 lg:col-span-7 lg:py-20">
-            <p class="kicker mb-8"><span class="tabular">02</span>Atuação</p>
+            <p class="kicker mb-8"><span class="tabular">03</span>Atuação</p>
             <h2 id="atuacao-titulo" class="h-sans max-w-[18ch] text-[clamp(2.3rem,4.8vw,4.75rem)] text-ink" data-split>Duas especialidades e um mesmo olhar: o de quem conhece o banco por dentro.</h2>
             <p class="mt-8 max-w-[44ch] text-[1.06rem] leading-[1.75] text-ink/80" data-reveal>A balança tem dois pratos. De um lado, o banco, que conhece cada cláusula do contrato. Do outro, quem produz e quem consome, que merece uma defesa à altura.</p>
           </div>
@@ -435,41 +468,8 @@
       </div>
     </section>
 
-    <!-- ================= A ADVOGADA ================= -->
-    <section id="advogada" class="bg-ground py-20 sm:py-24 lg:py-28" aria-labelledby="advogada-titulo">
-      <div class="container-page">
-        <p class="kicker mb-10"><span class="tabular">03</span>A advogada</p>
-
-        <div class="grid gap-14 lg:grid-cols-12 lg:gap-12">
-          <div class="lg:col-span-5">
-            <figure class="portrait-frame max-w-[26rem] overflow-hidden" data-reveal data-tilt>
-              <img class="aspect-[4/5] w-full object-cover object-[50%_32%]" src="assets/elizandra-perfil.webp" width="1067" height="1600" loading="lazy" decoding="async" alt="Dra. Elizandra Girardon sentada à mesa do escritório, de blazer branco, sorrindo, com estantes de livros ao fundo">
-            </figure>
-          </div>
-          <div class="lg:col-span-7">
-            <h2 id="advogada-titulo" class="display text-[clamp(2.4rem,4.6vw,4.25rem)] text-ink" data-split>Dra. Elizandra Girardon</h2>
-            <p class="tabular mt-4 text-sm tracking-wide text-accent-soft">Advogada fundadora · OAB/RS 100.183 · OAB/SP 543.297</p>
-            <div class="mt-8 max-w-[62ch] space-y-5 text-[1.06rem] leading-[1.75] text-ink/80" data-reveal>
-              <p>Possui mais de 24 anos de experiência no sistema financeiro, e sua principal atuação é voltada ao Direito Bancário e ao Direito do Agronegócio.</p>
-              <p>Sua atuação é pautada por estratégia, conhecimento técnico e proteção do patrimônio e da segurança financeira de seus clientes.</p>
-            </div>
-
-            <h3 class="mt-12 text-sm tracking-wide text-ink-muted">Especializações</h3>
-            <ul class="mt-5 grid gap-x-10 sm:grid-cols-2" data-specs>
-              <li class="flex items-baseline gap-4 border-b border-ink/10 py-3.5 text-ink"><span class="h-px w-5 flex-none translate-y-[-0.3em] bg-accent" aria-hidden="true"></span>Direito do Agronegócio</li>
-              <li class="flex items-baseline gap-4 border-b border-ink/10 py-3.5 text-ink"><span class="h-px w-5 flex-none translate-y-[-0.3em] bg-accent" aria-hidden="true"></span>Políticas Agrícolas</li>
-              <li class="flex items-baseline gap-4 border-b border-ink/10 py-3.5 text-ink"><span class="h-px w-5 flex-none translate-y-[-0.3em] bg-accent" aria-hidden="true"></span>Prorrogação de Dívidas Rurais</li>
-              <li class="flex items-baseline gap-4 border-b border-ink/10 py-3.5 text-ink"><span class="h-px w-5 flex-none translate-y-[-0.3em] bg-accent" aria-hidden="true"></span>Recuperação Judicial</li>
-              <li class="flex items-baseline gap-4 border-b border-ink/10 py-3.5 text-ink"><span class="h-px w-5 flex-none translate-y-[-0.3em] bg-accent" aria-hidden="true"></span>Direito Bancário</li>
-              <li class="flex items-baseline gap-4 border-b border-ink/10 py-3.5 text-ink"><span class="h-px w-5 flex-none translate-y-[-0.3em] bg-accent" aria-hidden="true"></span>Defesa do Executado</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ================= DÚVIDAS ================= -->
-    <section id="duvidas" class="theme-light bg-ground py-20 sm:py-24 lg:py-28" aria-labelledby="duvidas-titulo">
+    <section id="duvidas" class="bg-ground py-20 sm:py-24 lg:py-28" aria-labelledby="duvidas-titulo">
       <div class="container-page grid gap-14 lg:grid-cols-12">
         <div class="lg:col-span-4">
           <div class="lg:sticky lg:top-32">
@@ -521,7 +521,7 @@
     </section>
 
     <!-- ================= ENDEREÇO ================= -->
-    <section id="endereco" class="relative bg-ground py-20 sm:py-24 lg:py-28" aria-labelledby="endereco-titulo">
+    <section id="endereco" class="theme-light relative bg-ground py-20 sm:py-24 lg:py-28" aria-labelledby="endereco-titulo">
       <div class="container-page grid gap-12 lg:grid-cols-12 lg:items-center">
         <figure class="relative overflow-hidden lg:col-span-6" data-reveal data-tilt>
           <img class="aspect-[4/5] w-full object-cover" src="assets/escritorio-fachada.webp" width="1000" height="1250" loading="lazy" decoding="async" data-parallax-img alt="Fachada do escritório Elizandra Girardon Advocacia ao entardecer, com o monograma EG na torre branca">
@@ -583,8 +583,8 @@
       <nav class="md:col-span-3" aria-label="Rodapé">
         <ul class="space-y-3">
           <li><a class="link-underline hover:text-ink" href="#escritorio">Escritório</a></li>
-          <li><a class="link-underline hover:text-ink" href="#atuacao">Atuação</a></li>
           <li><a class="link-underline hover:text-ink" href="#advogada">A Advogada</a></li>
+          <li><a class="link-underline hover:text-ink" href="#atuacao">Atuação</a></li>
           <li><a class="link-underline hover:text-ink" href="#duvidas">Dúvidas</a></li>
         </ul>
       </nav>

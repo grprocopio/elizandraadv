@@ -441,3 +441,8 @@ Owner found the first load slow, the hero photo especially. Measured cause: the 
 ## Office statement hold (2026-10-27)
 
 At 768×640 and up, section 01 (office) is 170svh tall and its content is `position: sticky; top: 0` in a 100svh centred stage, so it stays on screen for about 70% of a viewport of scrolling. A scrubbed timeline (start when the section top reaches 25% of the viewport, end when it releases; scrub 0.3) lights the statement word by word, then raises the paragraph and the audience list, then holds everything complete briefly before release. Native sticky, not a ScrollTrigger pin: the page keeps scrolling normally. On smaller screens there is no hold (the content is taller than the viewport); the words light over a longer stretch instead, and the paragraph and list rise in on entry.
+
+
+## Section order (2026-10-27, final)
+
+Hero → marquee → 01 O escritório (sand, held statement) → 02 A advogada (wine) → 03 Atuação: Lady Justice intro (sand), agribusiness (wine-deep), banking (sand) → 04 Dúvidas (wine) → 05 Onde estamos / contact (sand) → footer (wine-deep). The lawyer now comes right after the office promise and before the practice areas, so her 24 years inside the financial system are read before "o de quem conhece o banco por dentro". Bands still alternate light and dark throughout; menus (header, mobile, footer) follow the same order.
