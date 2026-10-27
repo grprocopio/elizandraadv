@@ -5,7 +5,9 @@
     "build:css": "tailwindcss -i ./src/site.css -o ./assets/css/site.css --minify",
     "watch:css": "tailwindcss -i ./src/site.css -o ./assets/css/site.css --watch",
     "build:js": "terser assets/js/main.js -c -m -o assets/js/main.min.js",
-    "build": "npm run build:css && npm run build:js"
+    "build": "npm run build:css && npm run build:js",
+    "export": "node scripts/export-public.mjs",
+    "vercel-build": "npm run build && npm run export"
   },
   "devDependencies": {
     "tailwindcss": "3.4.17",
