@@ -431,3 +431,8 @@ Owner found the page too long (11 screens on desktop, 16 on phones). Now about 8
 - Section padding is 5rem / 6rem / 7rem (phone / 640px / 1024px) instead of up to 11rem.
 - Below 768px the ano-safra stages are a native horizontal swipe carousel with scroll snap (84% wide cards, next card peeking, "Deslize para ver as seis etapas" hint); it never captures vertical scroll.
 - Every section's content rises 64px and fades in once when its top crosses 90% of the viewport (1.1s, expo.out); band backgrounds stay in place.
+
+
+## No preloader, no hero intro (2026-10-27)
+
+Owner found the first load slow, the hero photo especially. Measured cause: the photo (55 KB) downloaded instantly but stayed invisible for 2.7–3.9s because CSS hid the hero until GSAP arrived from the CDN, then the preloader (~1.5s) and the intro fade (1.4s) ran. The preloader and the hero intro were removed: the hero is visible from the first paint (about 0.2–0.4s in tests, even with the libraries delayed by 3s). Earlier mentions in this file of a drawn-monogram preloader, a masked name rise or the hero intro sequence are historical. Sections below the hero still rise in on scroll.

@@ -197,7 +197,6 @@
   gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.config({ ignoreMobileResize: true });
   gsap.config({ force3D: true });
-  var introAllowed = root.classList.contains('motion-ready');
   window.__motionStarted = true;
   root.classList.add('motion-ready');
 
@@ -281,20 +280,6 @@
 
   /* ---------- Divisão de textos ---------- */
   var heroName = $('[data-hero-name]');
-  // Nome em 3 peças (Dra. / Elizandra / Girardon), não letra a letra: 3 camadas em vez de ~19.
-  var nameWords = [];
-  if (heroName) {
-    $$('.word', heroName).forEach(function (word) {
-      var inner = document.createElement('span');
-      inner.className = 'word-in';
-      inner.textContent = word.textContent;
-      word.textContent = '';
-      word.appendChild(inner);
-      nameWords.push(inner);
-    });
-    heroName.classList.add('is-split');
-    heroName.style.visibility = 'visible';
-  }
 
   // Divide o título em palavras, preservando destaques internos (ex.: <em class="hl">).
   var splitWords = function (el, cls) {
@@ -316,64 +301,11 @@
   $$('[data-split]').forEach(function (el) { splitWords(el, 'split-word'); });
   $$('[data-scrub-words]').forEach(function (el) { splitWords(el, 'scrub-word'); });
 
-  /* ---------- Pré-carregador + abertura do hero ---------- */
-  var preloader = $('[data-preloader]');
-  var portraitWrap = $('[data-portrait]');
+  /* ---------- Abertura: sem pré-carregador e sem animação de entrada ----------
+     Foto, nome, textos e botão aparecem já no primeiro quadro, sem esperar as bibliotecas. */
   var portraitInner = $('[data-portrait-inner]');
   var portraitImg = portraitInner ? portraitInner.querySelector('img') : null;
-  var halo = $('[data-halo]');
-  var monoLines = $$('[data-mono-hero] line');
-  var fades = $$('[data-hero-fade]');
-  var fieldLines = $$('[data-field] line');
   var hero = $('[data-hero]');
-  var heroBg = $('[data-hero-bg]');
-  var heroBgImg = $('[data-hero-bg-img]');
-
-  if (halo) gsap.set(halo, { xPercent: -50, x: 0 });
-
-  var heroIntro = function () {
-    var tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
-    tl.fromTo(heroBg, { opacity: 0 }, { opacity: 1, duration: 1.6, ease: 'power2.out' }, 0)
-      .to(halo, { opacity: 1, duration: 2.4, ease: 'power2.out' }, 0)
-      .fromTo(fieldLines, { scaleX: 0, transformOrigin: '50% 50%' }, { scaleX: 1, duration: 1.8, stagger: { each: 0.05, from: 'end' } }, 0)
-      .to(portraitWrap, { opacity: 1, duration: 1.4, ease: 'power2.out' }, 0.05)
-      .fromTo(portraitInner, { y: 90, scale: 1.04 }, { y: 0, scale: 1, duration: 2.1 }, 0.05)
-      .fromTo(nameWords, { yPercent: 112 }, { yPercent: 0, duration: 1.5, stagger: 0.12, onComplete: function () { heroName.classList.add('intro-done'); gsap.set(nameWords, { clearProps: 'transform' }); } }, 0.3)
-      .to(monoLines, { strokeDashoffset: 0, duration: 1.1, stagger: 0.12, ease: 'power2.inOut' }, 0.2)
-      .fromTo(fades, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 1.2, stagger: 0.12 }, 0.8);
-    return tl;
-  };
-
-  // Pré-carregador só no computador: no celular a página abre direto (sinal fraco, visitante com pressa).
-  var wantPreloader = window.matchMedia('(min-width: 1024px)').matches;
-  if (introAllowed && preloader && wantPreloader) {
-    document.documentElement.style.overflow = 'hidden';
-    var pLines = $$('line', preloader);
-    var pText = $$('[data-preloader-text]', preloader);
-    var pCount = $('[data-preloader-count]', preloader);
-    var counter = { v: 0 };
-    var unlock = function () {
-      preloader.style.display = 'none';
-      document.documentElement.style.overflow = '';
-    };
-    var pre = gsap.timeline();
-    setTimeout(unlock, 3000); // segurança: nunca prende a rolagem
-    gsap.set(pLines, { strokeDasharray: 1, strokeDashoffset: 1 });
-    pre.to(pLines, { strokeDashoffset: 0, duration: 0.5, stagger: 0.05, ease: 'power2.inOut' }, 0)
-      .fromTo(pText, { yPercent: 110 }, { yPercent: 0, duration: 0.55, ease: 'expo.out', stagger: 0.05 }, 0.12)
-      .to(counter, { v: 100, duration: 0.7, ease: 'power2.inOut', onUpdate: function () { if (pCount) pCount.textContent = String(Math.round(counter.v)); } }, 0)
-      .to($$('[data-preloader-inner]', preloader), { yPercent: -30, opacity: 0, duration: 0.35, ease: 'power3.in' }, 0.7)
-      .to(preloader, { yPercent: -100, duration: 0.7, ease: 'expo.inOut', onComplete: unlock }, 0.8)
-      .add(heroIntro(), 0.95);
-  } else if (introAllowed) {
-    if (preloader) preloader.style.display = 'none';
-    heroIntro();
-  } else {
-    if (preloader) preloader.style.display = 'none';
-    gsap.set([heroBg, halo, portraitWrap].concat(fades), { opacity: 1 });
-    if (heroName) heroName.classList.add('intro-done');
-    gsap.set(monoLines, { strokeDashoffset: 0 });
-  }
 
   /* ---------- Hero: reage ao mouse ---------- */
   if (finePointer && hero && portraitImg) {

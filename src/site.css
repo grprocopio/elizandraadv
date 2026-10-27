@@ -143,15 +143,14 @@
 }
 @media (min-width: 1024px) { .hero-name { font-size: clamp(5rem, min(11.8vw, 20svh), 12.5rem); line-height: .88; } }
 /* acabamento metálico */
-.hero-name .word, .hero-name .word-in {
+.hero-name .word {
   background: linear-gradient(180deg, #FFFFFF 0%, #EFE8DB 34%, #A8A296 68%, #D9C29A 100%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
-.hero-name.is-split .word { background: none; }
+
 .hero-name .word { display: inline-block; white-space: nowrap; }
-.hero-name.is-split .word { overflow: hidden; padding-bottom: .1em; margin-bottom: -.1em; vertical-align: bottom; }
-.hero-name.intro-done .word { overflow: visible; }
-.hero-name .word-in { display: inline-block; }
+
+
 
 /* monogram strokes */
 .mono line { stroke: currentColor; stroke-linecap: square; }
@@ -204,23 +203,15 @@
 
 .split-mask { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .14em; margin-bottom: -.14em; }
 .split-word { display: inline-block; }
-.motion-ready [data-hero-name] { visibility: hidden; }
+
 
 /* ---------- Motion guards: hidden start states only while JS motion runs ---------- */
-.motion-ready [data-hero-fade] { opacity: 0; }
-.motion-ready .hero-portrait-wrap { opacity: 0; }
-.motion-ready .hero-halo { opacity: 0; }
-.motion-ready .mono-draw line { stroke-dasharray: 1; stroke-dashoffset: 1; }
 
 
 
-/* ---------- Pré-carregador ---------- */
-.preloader { display: none; }
-.motion-ready .preloader {
-  display: flex; position: fixed; inset: 0; z-index: 95;
-  align-items: center; justify-content: center;
-  background: rgb(var(--ground-deep)); clip-path: inset(0% 0% 0% 0%);
-}
+
+
+
 
 /* ---------- Progresso de leitura ---------- */
 .scroll-progress { position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: rgb(var(--accent)); transform-origin: left center; transform: scaleX(0); }
@@ -269,7 +260,7 @@
     radial-gradient(ellipse at 50% 42%, rgb(var(--ground) / .15), rgb(var(--ground) / .72) 78%),
     linear-gradient(to bottom, rgb(var(--ground) / .65), rgb(var(--ground) / 0) 28%, rgb(var(--ground) / .35) 68%, rgb(var(--ground)) 100%);
 }
-.motion-ready [data-hero-bg] { opacity: 0; }
+
 
 /* ---------- Ícones de contato ---------- */
 .social-btn {
@@ -295,7 +286,7 @@
 
 /* ---------- "Dra." pequeno, alto, antes do E ---------- */
 .hero-name .word-title { font-size: .27em; line-height: 1; vertical-align: top; margin-right: .16em; margin-top: .2em; letter-spacing: .02em; }
-.hero-name.is-split .word-title { vertical-align: top; }
+
 
 /* ---------- Barra do menu ---------- */
 .header-inner { transition: height .5s var(--ease-out); }
@@ -408,9 +399,6 @@
   .header-cta { padding-left: .9rem; padding-right: .9rem; }
   .logo-link .logo-name { letter-spacing: .2em; }
 }
-
-/* pré-carregador só no computador */
-@media (max-width: 1023px) { .motion-ready .preloader { display: none; } }
 
 /* ---------- Ano-safra no celular: carrossel de deslizar (rolagem horizontal nativa, sem prender a página) ---------- */
 @media (max-width: 767px) {

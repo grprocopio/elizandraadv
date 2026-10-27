@@ -6,11 +6,12 @@ Site de uma página da Elizandra Girardon Advocacia. HTML estático + Tailwind +
 Não reintroduzir: Lenis ou outra rolagem suave por JS, cursor personalizado, `mix-blend-mode` em elementos fixos,
 efeitos que repintam a cada movimento do mouse (brilho com `background` variável), `scroll-behavior: smooth` no `html`.
 Animar só `transform`, `opacity` e traço de SVG; ouvintes de mouse passivos; laços de animação que dormem fora da tela;
-scrub numérico baixo (≤ 0,3). Rolagem liberada assim que a cortina do pré-carregador sobe.
-O nome da hero anima em 3 palavras, nunca letra a letra (sem divisão por letra, sem pulos nem onda periódica).
+scrub numérico baixo (≤ 0,3).
+Sem pré-carregador e sem animação de entrada na abertura (pedido da cliente, 2026-10-27): foto, nome, textos e botão
+aparecem no primeiro quadro, sem depender das bibliotecas. O nome nunca é dividido em letras.
 Sem `pin` do ScrollTrigger (nada de prender a rolagem) e sem parallax ligado à rolagem; revelações de fotos sem `clip-path`;
 `will-change` só no que se move sempre (retrato, faixa corrida, header).
-Fontes locais em `assets/fonts/` (não voltar ao Google Fonts). Pré-carregador só a partir de 1024 px.
+Fontes locais em `assets/fonts/` (não voltar ao Google Fonts).
 
 ## Fontes da verdade (nesta ordem)
 1. `PRODUCT.md`: público, objetivo (abrir conversa no WhatsApp) e regras da OAB (Provimento 205/2021).
