@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Static HTML + Tailwind CSS + vanilla JavaScript, with GSAP + ScrollTrigger for motion and Lenis for smooth scroll (user-pinned in the brief).
+Static HTML + Tailwind CSS + vanilla JavaScript, with GSAP + ScrollTrigger for motion. Native browser scrolling: Lenis smooth scroll and the custom cursor were removed on 2026-10-27 because the owner found the site laggy; fluidity takes priority over effects.
 
 ## Users
 

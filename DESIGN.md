@@ -164,21 +164,6 @@ components:
   scroll-progress:
     backgroundColor: "{colors.accent}"
     height: "2px"
-  cursor-ring:
-    backgroundColor: "transparent"
-    rounded: "{rounded.circle}"
-    size: "40px"
-  cursor-ring-hover:
-    backgroundColor: "rgba(216, 162, 90, 0.12)"
-    size: "64px"
-  cursor-ring-label:
-    backgroundColor: "{colors.accent}"
-    textColor: "{colors.ground-deep}"
-    size: "92px"
-  cursor-dot:
-    backgroundColor: "{colors.accent}"
-    rounded: "{rounded.circle}"
-    size: "6px"
   preloader:
     backgroundColor: "{colors.ground-deep}"
     textColor: "{colors.ink}"
@@ -205,7 +190,7 @@ Photography: the white-suit portrait (waist-up) on wine in the hero, the bronze 
 - Bands alternate dark (wine family) and light (sand); the marquee is the single bordô strip.
 - One accent per band: dune on dark grounds, bordô on light grounds.
 - Three heading voices (Instrument Serif, Outfit 500, Anton) rotate; numbered section markers give rhythm.
-- Hairline rules, never boxes; square corners, with circles reserved for the WhatsApp float, the contact buttons and the pointer layer.
+- Hairline rules, never boxes; square corners, with circles reserved for the WhatsApp float, the contact buttons.
 - Drawn, masked, expo-out motion plus a fine-pointer interaction layer, with a full no-JS fallback.
 
 ## Colors
@@ -222,12 +207,11 @@ Colours are theme variables (RGB channels) set per band in `src/site.css`: `:roo
 | accent-soft | #ECDEC4 | #ECDEC4 | #96283A |
 | cta / cta-ink | sand / wine | sand / bordô | bordô / sand |
 
-Fixed exceptions: the floating WhatsApp button is bordô with a sand ring so it reads over both grounds; the custom cursor is sand with `mix-blend-mode: difference`.
+Fixed exceptions: the floating WhatsApp button is bordô with a sand ring so it reads over both grounds.
 
 Some values sit outside the palette and are never reused as colours:
 - **Hero name metal:** the gradient stops (#FFFFFF, #EFE8DB, #A8A296, #D9C29A) belong to that finish only. See Typography.
 - **Scrollbar thumb:** bordô (#7A1E2E) on the wine-deep track, in browser chrome only.
-- **Tilt glare:** a warm light, described under Elevation & Depth.
 
 ### Named Rules
 **The Alternating Band Rule.** Neighbouring sections never share a ground. Dark bands use the wine family, light bands use sand; the marquee is the only bordô band.
@@ -315,7 +299,6 @@ Perspective is the interaction layer's depth. The profile photo and the facade t
 Corners are square (0px) everywhere: buttons, images, the menu toggle and rows. Circles are reserved for three families:
 - the floating WhatsApp button with its pulse ring
 - the 48px contact buttons
-- the pointer layer (cursor ring, labelled disc and dot)
 
 Focus rings round to 2px, and the scrollbar thumb, which is browser chrome, rounds to 10px. The recurring geometry is the straight stroke:
 - the EG monogram's six horizontal and vertical lines, with square caps, which also serve as the marquee's separators
@@ -350,8 +333,8 @@ Desktop links (Escritório, Atuação, A Advogada, Dúvidas, Contato) sit inside
 
 Below 1024px, a square hairline toggle opens a full-height ground-deep sheet with a faint oversized monogram. The sheet lists the five sections in Instrument Serif at the headline size (2.4rem on phones) with accent arrows, ruled at ink 0.10. The rule draws in accent and the label shifts 8px in accent-soft on hover and for the active section. The primary button, the contact buttons and the address with hours sit at the foot. Links rise in a stagger on open.
 
-### Custom Cursor (fine pointers only)
-The native cursor is hidden. In its place, a 40px ring (1px accent at 0.7) trails the pointer (0.5s) and a 6px accent dot tracks it almost exactly. The ring keeps its size over links and buttons and never shows a label (owner request). Pressing thickens the ring to 3px. Touch devices never see it.
+### Cursor
+The native system cursor is used. The custom ring-and-dot cursor was removed on 2026-10-27 (owner found the site laggy; a trailing cursor reads as lag and its blend mode forced a full-page compositing layer).
 
 ### Hero (signature)
 The stage layers back to front: dimmed facade, field lines, metallic name, accent halo, cut-out portrait, copy. On entrance the facade settles from 1.12 scale over 3s, the name's letters rise out of masks, the portrait lifts into place and the copy fades up. On scroll, the facade drifts down 12%, the portrait sinks, the name rises and the halo swells. On a mouse, each layer drifts at its own rate:
@@ -419,7 +402,12 @@ A 56px accent circle with the ground WhatsApp mark, fixed bottom right. A 1px ac
 - **Don't** use gavel imagery, and don't repeat the Lady Justice statue; she appears once, in the practice-areas intro.
 - **Don't** set services as a row of equal boxed cards; use ruled rows or the timeline.
 - **Don't** clip gradients to text anywhere except the hero name.
-- **Don't** round corners on content. Circles belong only to the WhatsApp float and its pulse ring, the contact buttons and the pointer layer. The 2px focus ring and the 10px scrollbar thumb are the only other exceptions.
+- **Don't** round corners on content. Circles belong only to the WhatsApp float and its pulse ring, the contact buttons. The 2px focus ring and the 10px scrollbar thumb are the only other exceptions.
 - **Don't** add hard, offset or coloured shadows; the two soft drop shadows are the whole vocabulary.
 - **Don't** add a second accent hue or a light page ground.
 - **Don't** treat mask stops, the hero name's metal stops or the tilt glare as palette colours.
+
+
+## Performance Rules (2026-10-27)
+
+Native scrolling only (no Lenis); no custom cursor; no `mix-blend-mode` on fixed elements; tilt animates transform only (the glare was removed because it repainted the photo on every mouse move); mouse listeners are passive; the ano-safra story clock sleeps when no illustration is on screen; pinned and scrubbed scenes use scrub 0.3 or `true`; scroll unlocks when the preloader curtain lifts (~2s), not at the end of the hero intro.

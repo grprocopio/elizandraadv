@@ -1,6 +1,12 @@
 # CLAUDE.md
 
-Site de uma página da Elizandra Girardon Advocacia. HTML estático + Tailwind + GSAP/ScrollTrigger + Lenis.
+Site de uma página da Elizandra Girardon Advocacia. HTML estático + Tailwind + GSAP/ScrollTrigger, com rolagem nativa.
+
+## Fluidez (pedido da cliente, 2026-10-27)
+Não reintroduzir: Lenis ou outra rolagem suave por JS, cursor personalizado, `mix-blend-mode` em elementos fixos,
+efeitos que repintam a cada movimento do mouse (brilho com `background` variável), `scroll-behavior: smooth` no `html`.
+Animar só `transform`, `opacity` e traço de SVG; ouvintes de mouse passivos; laços de animação que dormem fora da tela;
+scrub numérico baixo (≤ 0,3). Rolagem liberada assim que a cortina do pré-carregador sobe.
 
 ## Fontes da verdade (nesta ordem)
 1. `PRODUCT.md`: público, objetivo (abrir conversa no WhatsApp) e regras da OAB (Provimento 205/2021).
