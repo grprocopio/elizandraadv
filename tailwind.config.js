@@ -4,26 +4,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        navy: {
-          950: '#06112A',
-          900: '#0A1B38',
-          850: '#0E2244',
-          800: '#132B52',
-          700: '#1D3B6B',
-        },
-        ivory: {
-          DEFAULT: '#F4EFE5',
-          200: '#E9E1D2',
-          muted: '#B8C3D6',
-        },
-        amber: {
-          DEFAULT: '#D8A25A',
-          soft: '#E9C690',
-          deep: '#8A5A1E',
-        },
+        // Cores por variável: cada seção define o próprio tema (claro, escuro, bordô) em src/site.css.
+        ground: { DEFAULT: 'rgb(var(--ground) / <alpha-value>)', deep: 'rgb(var(--ground-deep) / <alpha-value>)' },
+        ink: { DEFAULT: 'rgb(var(--ink) / <alpha-value>)', muted: 'rgb(var(--ink-muted) / <alpha-value>)' },
+        accent: { DEFAULT: 'rgb(var(--accent) / <alpha-value>)', soft: 'rgb(var(--accent-soft) / <alpha-value>)' },
+        cta: { DEFAULT: 'rgb(var(--cta) / <alpha-value>)', ink: 'rgb(var(--cta-ink) / <alpha-value>)' },
       },
       fontFamily: {
-        display: ['"Bodoni Moda"', 'Didot', '"Bodoni 72"', 'Georgia', 'serif'],
+        display: ['"Instrument Serif"', 'Georgia', 'serif'],
         sans: ['Outfit', 'system-ui', 'sans-serif'],
       },
       maxWidth: { page: '84rem' },

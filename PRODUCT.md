@@ -34,7 +34,7 @@ A lawyer who spent more than 24 years inside the financial system and now defend
 
 - Name: Elizandra Girardon Advocacia. Logo: an "EG" monogram built from thin horizontal and vertical lines, with the name in wide-tracked capitals.
 - Body typeface Outfit, as on the current site.
-- User-pinned palette: deep navy ground with warm amber-gold accents. The hero uses the white-suit portrait and the closing section the red-blazer one (owner request, 2026-10-27). That red blazer is the only red on the page.
+- Palette (owner choice, 2026-10-27, replacing navy and amber-gold): wine and sand. Sections alternate dark (wine) and light (sand), with bordô and dune as accents; the look must stand apart from the navy-and-gold default of law-firm sites. Owner direction: contemporary and bold. The hero uses the white-suit portrait and the closing section the red-blazer one (owner request, 2026-10-27). That red blazer is the only red on the page.
 - Lady Justice statue is wanted (owner request, 2026-10-25): bronze statue with scales, used as a featured image. Still no gavel stock imagery.
 - Hero name set in a heavy condensed sans (Anton) with a metallic finish, per owner reference.
 

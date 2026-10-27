@@ -191,10 +191,18 @@
     heroName.style.visibility = 'visible';
   }
 
+  // Divide o título em palavras, preservando destaques internos (ex.: <em class="hl">).
   var splitWords = function (el, cls) {
-    var words = el.textContent.trim().split(/\s+/);
-    el.setAttribute('aria-label', el.textContent.trim());
-    el.innerHTML = words.map(function (w) {
+    var parts = [];
+    Array.prototype.forEach.call(el.childNodes, function (n) {
+      var text = n.textContent.trim();
+      if (!text) return;
+      var wrap = n.nodeType === 1 ? { tag: n.tagName.toLowerCase(), cls: n.className } : null;
+      text.split(/\s+/).forEach(function (w) { parts.push({ w: w, wrap: wrap }); });
+    });
+    el.setAttribute('aria-label', el.textContent.trim().replace(/\s+/g, ' '));
+    el.innerHTML = parts.map(function (p) {
+      var w = p.wrap ? '<' + p.wrap.tag + (p.wrap.cls ? ' class="' + p.wrap.cls + '"' : '') + '>' + p.w + '</' + p.wrap.tag + '>' : p.w;
       return cls === 'split-word'
         ? '<span class="split-mask" aria-hidden="true"><span class="split-word">' + w + '</span></span>'
         : '<span class="' + cls + '" aria-hidden="true">' + w + '</span>';
