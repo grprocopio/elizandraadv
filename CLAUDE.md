@@ -11,6 +11,8 @@ Sem pré-carregador e sem animação de entrada na abertura (pedido da cliente, 
 aparecem no primeiro quadro, sem depender das bibliotecas. O nome nunca é dividido em letras.
 Sem `pin` do ScrollTrigger e sem parallax ligado à rolagem; revelações de fotos sem `clip-path`. Exceção pedida pela cliente
 (2026-10-27): a seção 01 Escritório segura na tela com `position: sticky` nativo (não pin) enquanto a frase acende, só ≥ 768×640;
+Segunda exceção (2026-10-27): no Agronegócio, a seção segura com sticky nativo e a rolagem vertical move as seis etapas
+para o lado (scrub 0,3); o JS só liga isso quando o bloco cabe inteiro na altura da tela, senão fica a grade/carrossel.
 `will-change` só no que se move sempre (retrato, faixa corrida, header).
 Fontes locais em `assets/fonts/` (não voltar ao Google Fonts).
 

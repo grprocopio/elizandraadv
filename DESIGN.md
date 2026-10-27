@@ -356,6 +356,8 @@ The banking problems are a ruled list of WhatsApp links. Each row sets the clien
 
 ### Ano-safra Timeline (signature)
 
+**Scroll-driven since 2026-10-27 (client request):** when the block fits the viewport height, the section holds with native `position: sticky` and vertical scrolling slides the six stages sideways 1:1 (scrub 0.3), on a horizontal accent spine with a hairline progress bar; stages fade in as they arrive from the right. Otherwise (short screens, no JS) the grid/swipe layout below applies.
+
 **Layout since 2026-10-27 (performance):** no pin and no horizontal scroll. The six stages sit in a grid (1 column on phones, 2 from 768px, 3 from 1024px), each with its own vertical accent spine and diamond marker; stages rise in once when they enter. Earlier descriptions of a pinned horizontal track below are historical.
 Six stages run from contract to asset risk. Each has a Instrument Serif stage name, an ink description, and a accent-soft remedy line set off by an ink 0.10 hairline. Markers are rotated hollow accent squares. In the horizontal desktop variant, inactive stages dim to 0.42 opacity, stage names slide in as they enter, and the active stage fills its marker.
 

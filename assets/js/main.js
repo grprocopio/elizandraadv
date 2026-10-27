@@ -496,19 +496,88 @@
   var safra = $('[data-safra]');
   var mm = gsap.matchMedia();
 
-  mm.add('all', function () {
-    var triggers = stages.map(function (s) {
-      return ScrollTrigger.create({
-        trigger: s, start: 'top 70%', once: true,
-        onEnter: function () {
-          s.classList.add('is-active');
-          gsap.fromTo(s.querySelector('.stage-body'), { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 1, ease: 'expo.out' });
+  var safraPin = $('[data-safra-pin]');
+  var safraTrack = $('[data-safra-track]');
+  var safraBar = $('[data-safra-bar]');
+
+  /* Entrada de cada etapa (modo grade/carrossel, ou dentro da rolagem horizontal via containerAnimation) */
+  function stageIn(s, extra) {
+    return ScrollTrigger.create(Object.assign({
+      trigger: s, start: 'top 70%', once: true,
+      onEnter: function () {
+        s.classList.add('is-active');
+        gsap.fromTo(s.querySelector('.stage-body'), { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 1, ease: 'expo.out' });
+      }
+    }, extra || {}));
+  }
+
+  /* Ano-safra com rolagem (pedido da cliente, 2026-10-27): a seção segura na tela (sticky nativo)
+     e a rolagem vertical leva as seis etapas para o lado, 1 px de rolagem = 1 px de percurso.
+     Só liga quando o bloco cabe inteiro na altura da tela; senão, fica a grade/carrossel de antes. */
+  function safraDistance() {
+    var box = safraTrack.parentNode, cs = getComputedStyle(box);
+    var inner = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    return Math.max(0, Math.ceil(safraTrack.scrollWidth - inner));
+  }
+  function safraFits() {
+    safra.classList.add('is-scrollx');
+    var fits = safraPin.scrollHeight <= window.innerHeight + 1 && safraDistance() > 40;
+    if (!fits) safra.classList.remove('is-scrollx');
+    return fits;
+  }
+
+  function safraSetup() {
+    var triggers = [];
+    var tween = null;
+    if (safra && safraPin && safraTrack && safraFits()) {
+      var setHeight = function () { safra.style.height = (window.innerHeight + safraDistance()) + 'px'; };
+      setHeight();
+      tween = gsap.to(safraTrack, {
+        x: function () { return -safraDistance(); },
+        ease: 'none',
+        scrollTrigger: {
+          trigger: safra, start: 'top top', end: 'bottom bottom', scrub: 0.3,
+          invalidateOnRefresh: true, onRefreshInit: setHeight
         }
       });
-    });
-    return function () { triggers.forEach(function (t) { t.kill(); }); };
-  });
+      if (safraBar) {
+        triggers.push(gsap.to(safraBar, {
+          scaleX: 1, ease: 'none',
+          scrollTrigger: { trigger: safra, start: 'top top', end: 'bottom bottom', scrub: 0.3 }
+        }).scrollTrigger);
+      }
+      var vw = window.innerWidth;
+      stages.forEach(function (s) {
+        // as que já aparecem na tela antes do percurso entram pela rolagem vertical; as demais, ao chegarem pelo lado
+        triggers.push(s.getBoundingClientRect().left < vw * 0.88 ? stageIn(s) : stageIn(s, { containerAnimation: tween, start: 'left 88%' }));
+      });
+    } else {
+      triggers = stages.map(function (s) { return stageIn(s); });
+    }
+    return function () {
+      triggers.forEach(function (t) { if (t) t.kill(); });
+      if (tween) { if (tween.scrollTrigger) tween.scrollTrigger.kill(); tween.kill(); }
+      if (safra) { safra.classList.remove('is-scrollx'); safra.style.height = ''; }
+      if (safraTrack) gsap.set(safraTrack, { clearProps: 'transform' });
+    };
+  }
+  mm.add('all', safraSetup);
 
-  window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+  /* Se a tela muda de largura ou de altura relevante (girar o celular, redimensionar), refaz a decisão grade x rolagem */
+  if (safra) {
+    var lastW = window.innerWidth, lastH = window.innerHeight, rz;
+    window.addEventListener('resize', function () {
+      clearTimeout(rz);
+      rz = setTimeout(function () {
+        var w = window.innerWidth, h = window.innerHeight;
+        if (w === lastW && Math.abs(h - lastH) < 120) return; // barra de endereço do celular: ignora
+        lastW = w; lastH = h;
+        rebuildSafra();
+      }, 250);
+    }, { passive: true });
+  }
+  function rebuildSafra() { mm.revert(); mm.add('all', safraSetup); ScrollTrigger.refresh(); }
+
+  window.addEventListener('load', function () { if (safra) rebuildSafra(); else ScrollTrigger.refresh(); });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { ScrollTrigger.refresh(); });
 })();

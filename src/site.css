@@ -401,6 +401,55 @@
   .safra-track:focus-visible { outline-offset: -2px; }
 }
 
+/* ---------- Ano-safra com rolagem: a rolagem vertical leva as etapas para o lado ----------
+   Pedido da cliente (2026-10-27). Sticky nativo (não é pin); o JS liga a classe .is-scrollx só quando
+   o bloco cabe inteiro na tela e define a altura da seção (uma tela + o percurso horizontal). */
+.safra.is-scrollx { overflow: clip; }
+.safra.is-scrollx [data-safra-pin] {
+  position: sticky; top: 0; min-height: 100svh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding-top: 4.5rem; padding-bottom: 2rem;
+}
+.safra.is-scrollx .safra-viewport { margin-top: 2.25rem; }
+.safra.is-scrollx .safra-track {
+  display: flex; gap: 2.5rem; overflow: visible; scroll-snap-type: none;
+  margin: 0; padding: 0; width: max-content;
+}
+.safra.is-scrollx .safra-stage {
+  flex: 0 0 min(23rem, 80vw); max-width: none;
+  border-left: 0; border-top: 1px solid rgb(var(--accent) / .3);
+  padding: 1.9rem 0 0;
+}
+.safra.is-scrollx .safra-stage::before { left: 0; top: -5px; }
+.safra.is-scrollx .safra-stage:last-child { padding-right: 0; }
+.safra.is-scrollx .swipe-hint { display: none; }
+.safra-bar { display: none; }
+.safra.is-scrollx .safra-bar {
+  display: block; height: 1px; margin-top: 2rem; background: rgb(var(--ink) / .12);
+}
+.safra.is-scrollx .safra-bar > span {
+  display: block; height: 100%; background: rgb(var(--accent)); transform-origin: 0 50%; transform: scaleX(0);
+}
+@media (max-width: 767px) {
+  /* celular: tudo precisa caber numa tela, então o bloco fica mais compacto */
+  .safra.is-scrollx [data-safra-pin] { padding-top: 3.75rem; padding-bottom: 1rem; }
+  .safra.is-scrollx .h-cond { font-size: 2.6rem; }
+  .safra.is-scrollx [data-safra-pin] > .container-page p { font-size: .95rem; line-height: 1.55; }
+  .safra.is-scrollx .safra-viewport { margin-top: 1.5rem; }
+  .safra.is-scrollx .safra-track { gap: 1.5rem; }
+  .safra.is-scrollx .safra-stage { flex-basis: 82vw; padding-top: 1.4rem; }
+  .safra.is-scrollx .safra-art { width: 7.5rem; height: 4.5rem; margin-bottom: .9rem; }
+  .safra.is-scrollx .safra-stage h4 { font-size: 2rem; }
+  .safra.is-scrollx .stage-body > p { margin-top: .7rem; font-size: .95rem; line-height: 1.5; }
+  .safra.is-scrollx .stage-body > p + p { padding-top: .7rem; }
+  .safra.is-scrollx .stage-body .btn-primary { margin-top: 1.1rem; }
+  .safra.is-scrollx .safra-bar { margin-top: 1.25rem; }
+}
+@media (min-width: 1024px) {
+  .safra.is-scrollx .safra-track { gap: 3.5rem; }
+  .safra.is-scrollx .safra-stage { flex-basis: min(26rem, 30vw); }
+}
+
 /* ---------- 01 Escritório: segura na tela enquanto a frase acende (sticky nativo, não é pin) ---------- */
 @media (min-width: 768px) and (min-height: 640px) {
   .hold { height: 170svh; padding-top: 0; padding-bottom: 0; }
