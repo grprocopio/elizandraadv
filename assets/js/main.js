@@ -64,6 +64,105 @@
     });
   });
 
+  /* ---------- Ano-safra: cada ilustração encena a sua etapa ----------
+     Entrada ao aparecer (30% visível), depois a história em loop enquanto está na tela.
+     Toda história começa e termina no desenho em repouso. Não depende do GSAP. */
+  (function safraStories() {
+    var arts = $$('[data-story]');
+    if (!arts.length || !('IntersectionObserver' in window)) return;
+    var io3 = function (k) { return k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; };
+    var tr = function (keys, t) {
+      if (t <= keys[0][0]) return keys[0][1];
+      for (var i = 1; i < keys.length; i++) {
+        if (t <= keys[i][0]) {
+          var k = io3((t - keys[i - 1][0]) / ((keys[i][0] - keys[i - 1][0]) || 1));
+          return keys[i - 1][1] + (keys[i][1] - keys[i - 1][1]) * k;
+        }
+      }
+      return keys[keys.length - 1][1];
+    };
+    var op = function (n, v) { if (n) n.style.opacity = v; };
+    var tf = function (n, v) { if (n) n.style.transform = v; };
+    var dash = function (n, v) { if (n) n.style.strokeDashoffset = v; };
+
+    var stories = {
+      contrato: { p: 6, u: function (r, t) {
+        dash(r.sig, tr([[0, 0], [0.5, 1], [0.8, 1], [2.2, 0]], t));
+        op(r.seal, tr([[0, 1], [0.4, 0], [2.4, 0], [2.6, 1]], t));
+        tf(r.seal, 'scale(' + tr([[0, 1], [2.4, 1.35], [2.75, 1]], t) + ')');
+        op(r.seal2, tr([[0, 0], [3.1, 0], [3.3, 1], [4.8, 1], [5.3, 0]], t));
+        tf(r.seal2, 'scale(' + tr([[0, 1.35], [3.1, 1.35], [3.45, 1]], t) + ')');
+      } },
+      plantio: { p: 6, u: function (r, t) {
+        for (var i = 0; i < 4; i++) {
+          var d = i * 0.18;
+          var sy = tr([[0, 1], [0.5, 0.02], [0.9 + d, 0.02], [1.8 + d, 1]], t);
+          var rot = tr([[0, 0], [3.1, 0], [3.5, -14 + i * 2], [4.4, -14 + i * 2], [5.1, 0]], t);
+          tf(r['s' + i], 'rotate(' + rot + 'deg) scaleY(' + sy + ')');
+        }
+        tf(r.coin, 'translateY(' + tr([[0, 0], [2.7, 0], [3.3, 19], [4.4, 19], [5.1, 0]], t) + 'px)');
+      } },
+      clima: { p: 6.5, u: function (r, t) {
+        for (var i = 0; i < 5; i++) {
+          var y = 0, o = 1;
+          if (t < 3.2) {
+            var f = ((t + 1 - i * 0.2) % 1 + 1) % 1;
+            y = f * 16; o = f < 0.15 ? f / 0.15 : 1 - (f - 0.15) / 0.85;
+          } else { o = Math.min(1, (t - 3.2) / 0.5); }
+          tf(r['d' + i], 'translateY(' + y + 'px)'); op(r['d' + i], o);
+        }
+        dash(r.price, tr([[0, 0], [3.3, 0], [3.6, 1], [3.8, 1], [5.2, 0]], t));
+        op(r.arrow, tr([[0, 1], [3.3, 1], [3.45, 0], [5.1, 0], [5.4, 1]], t));
+      } },
+      colheita: { p: 5.5, u: function (r, t) {
+        tf(r.fill, 'scaleX(' + tr([[0, 1], [0.4, 0], [0.7, 0], [2.0, 1]], t) + ')');
+        op(r.gap, tr([[0, 0], [2.2, 0], [2.5, 0.4], [2.9, 0], [3.2, 0.4], [3.6, 0]], t));
+      } },
+      vencimento: { p: 6.5, u: function (r, t) {
+        var due = 10, step = 0.16, start = 0.5, arrive = start + due * step;
+        var idx = Math.max(0, Math.min(due, Math.floor((t - start) / step)));
+        var c = idx % 6, row = Math.floor(idx / 6);
+        tf(r.hi, 'translate(' + ((c - 4) * 14) + 'px,' + ((row - 1) * 14) + 'px)');
+        op(r.hi, tr([[0, 0], [start, 0], [start + 0.1, 1], [arrive + 1.2, 1], [arrive + 1.6, 0]], t));
+        dash(r.ring, tr([[0, 0], [0.35, 1], [arrive + 0.15, 1], [arrive + 1.0, 0]], t));
+      } },
+      patrimonio: { p: 6.5, u: function (r, t) {
+        tf(r.shackle, 'translateY(' + tr([[0, -7], [1.0, -7], [1.35, 0], [4.3, 0], [4.9, -7]], t) + 'px)');
+        tf(r.body, 'scale(' + tr([[0, 1], [1.3, 1], [1.5, 1.08], [1.8, 1]], t) + ')');
+        op(r.chain, tr([[0, 0], [1.6, 0], [1.9, 1], [4.0, 1], [4.4, 0]], t));
+        if (r.chain) r.chain.style.strokeDashoffset = String(-(t * 14) % 6);
+      } }
+    };
+
+    arts.forEach(function (a, i) {
+      a._r = {};
+      $$('[data-r]', a).forEach(function (n) { a._r[n.getAttribute('data-r')] = n; });
+      a._acc = -(1.1 + (i % 3) * 0.6); // espera a entrada e desencontra as etapas
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var a = e.target;
+        a._vis = e.isIntersecting;
+        if (e.isIntersecting && !a._in) { a._in = true; a.classList.add('is-in'); }
+      });
+    }, { threshold: 0.3 });
+    arts.forEach(function (a) { io.observe(a); });
+
+    var last = 0;
+    var frame = function (now) {
+      var dt = last ? Math.min(0.1, (now - last) / 1000) : 0;
+      last = now;
+      arts.forEach(function (a) {
+        if (!a._in || !a._vis) return; // fora da tela: o relógio para
+        var s = stories[a.getAttribute('data-story')];
+        a._acc += dt;
+        if (s && a._acc > 0) s.u(a._r, a._acc % s.p);
+      });
+      requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+  })();
+
   var stages = $$('[data-stage]');
   var gsapReady = !!(window.gsap && window.ScrollTrigger);
 
