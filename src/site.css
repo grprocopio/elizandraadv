@@ -216,17 +216,6 @@
 /* ---------- Progresso de leitura ---------- */
 .scroll-progress { position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: rgb(var(--accent)); transform-origin: left center; transform: scaleX(0); }
 
-/* ---------- Faixa corrida ---------- */
-.marquee { overflow: hidden; }
-.marquee-track { display: flex; width: max-content; }
-.marquee-row { display: flex; flex: none; align-items: center; }
-.marquee-item {
-  font-family: "Instrument Serif", Georgia, serif; font-style: italic;
-  font-size: clamp(1.8rem, 4vw, 3.4rem); line-height: 1.1; white-space: nowrap;
-  color: rgb(var(--ink)); padding: 0 2.2rem;
-}
-.marquee-sep { width: 1.5rem; height: 1.5rem; flex: none; color: rgb(var(--accent)); }
-
 /* ---------- Texto que acende ao rolar ---------- */
 .scrub-word { display: inline; }
 
@@ -277,7 +266,7 @@
 
 /* ---------- Desempenho: camadas próprias para o que se move ---------- */
 /* só o que se move continuamente ganha camada própria */
-[data-portrait-inner], .marquee-track, .site-header { will-change: transform; }
+[data-portrait-inner], .site-header { will-change: transform; }
 .hero-portrait, .justice-statue, .cta-portrait { backface-visibility: hidden; }
 
 /* ---------- Nome: cada letra em camada própria, sem corte no pulo ---------- */
@@ -420,4 +409,10 @@
     display: flex; flex-direction: column; justify-content: center;
     padding-top: 5.5rem; padding-bottom: 3rem;
   }
+}
+
+/* ---------- Transição entre a abertura e o escritório: vinho → bordô → areia (estático) ---------- */
+.fade-band {
+  height: clamp(7rem, 16vw, 13rem);
+  background: linear-gradient(180deg, #4A1220 0%, #7A1E2E 38%, #B9837C 68%, #EFE5D4 100%);
 }

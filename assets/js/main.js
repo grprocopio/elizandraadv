@@ -321,28 +321,6 @@
     hero.addEventListener('mouseleave', function () { pX(0); pR(0); nX(0); });
   }
 
-  /* ---------- Faixa corrida (marquee) ---------- */
-  $$('[data-marquee]').forEach(function (mq) {
-    var track = $('[data-marquee-track]', mq);
-    if (!track) return;
-    var loop = gsap.to(track, { xPercent: -50, repeat: -1, duration: 38, ease: 'none' });
-    var target = 1, current = 1, dir = 1, visible = false;
-    ScrollTrigger.create({
-      trigger: mq, start: 'top bottom', end: 'bottom top',
-      onToggle: function (self) { visible = self.isActive; if (visible) loop.play(); else loop.pause(); },
-      onUpdate: function (self) {
-        dir = self.direction;
-        target = dir * (1 + Math.min(Math.abs(self.getVelocity()) / 300, 6));
-      }
-    });
-    gsap.ticker.add(function () {
-      if (!visible) return;
-      target += (dir - target) * 0.04;
-      current += (target - current) * 0.12;
-      loop.timeScale(current);
-    });
-  });
-
   /* ---------- Cada seção surge ao entrar na tela (uma vez) ----------
      O fundo da faixa fica; o conteúdo sobe 64px e aparece. Só transform e opacity. */
   [

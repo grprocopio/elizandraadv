@@ -446,3 +446,8 @@ At 768×640 and up, section 01 (office) is 170svh tall and its content is `posit
 ## Section order (2026-10-27, final)
 
 Hero → marquee → 01 O escritório (sand, held statement) → 02 A advogada (wine) → 03 Atuação: Lady Justice intro (sand), agribusiness (wine-deep), banking (sand) → 04 Dúvidas (wine) → 05 Onde estamos / contact (sand) → footer (wine-deep). The lawyer now comes right after the office promise and before the practice areas, so her 24 years inside the financial system are read before "o de quem conhece o banco por dentro". Bands still alternate light and dark throughout; menus (header, mobile, footer) follow the same order.
+
+
+## Marquee removed (2026-10-27)
+
+The scrolling practice-area marquee between the hero and section 01 was removed (it repeated the practice areas, moving text was hard to read, and it looked templated). In its place is a static gradient band, `.fade-band` (7–13rem tall): wine #4A1220 → bordô #7A1E2E → #B9837C → sand #EFE5D4, joining the hero to the sand office section without a seam. Bordô now appears as a large fill only inside this gradient and on the WhatsApp float. Earlier mentions of the marquee in this file are historical.
