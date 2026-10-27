@@ -1,0 +1,4 @@
+{
+  "prompt": "Origin: foto4-bordo.jpg (client post, red suit, beige wall, 2061x2576). Cut out with OpenCV GrabCut (seeded mask, text column excluded), 3px erode + 1.6px blur edge, background tint removed from hair edges by inpainting, grey gap between arm and jacket cleared; cropped at the waist with a 400px smoothstep bottom fade baked into alpha; WebP q88.",
+  "createdAt": "2026-10-27T13:55:00.000Z"
+}

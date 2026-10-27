@@ -180,14 +180,14 @@ components:
 
 **Creative North Star: "Wine Cellar, Sand Ledger"** (redesign 2026-10-27, owner request: leave the ground-and-gold look every law firm uses, stop the page from repeating itself.)
 
-The page is a sequence of full-width bands that alternate dark and light: wine, bordô, sand, wine, wine-deep, sand, wine, sand, wine, sand, wine-deep. No two neighbouring sections share a ground, so the eye always registers a new chapter. Structure inside each band is still drawn, not built: hairlines in the band's accent divide, underline and track progress, and the EG monogram's six strokes draw themselves.
+The page is a sequence of full-width bands that alternate dark and light: wine, bordô, sand, wine, wine-deep, sand, wine, sand, wine, bordô, wine-deep. No two neighbouring sections share a ground, so the eye always registers a new chapter. Structure inside each band is still drawn, not built: hairlines in the band's accent divide, underline and track progress, and the EG monogram's six strokes draw themselves.
 
 Type changes voice from section to section instead of repeating one large serif. Her name stands in Anton capitals with a cast-metal finish. Instrument Serif carries statements and the client's own phrasing (roman, and italic for the closing line). Outfit at weight 500, tightly tracked, carries the plain-spoken headings. Anton returns for the two specialties and the contact heading, paired with an outlined letter (A, B). Every section opens with a numbered marker ("01 — O escritório").
 
-Photography: the white-suit portrait (waist-up) on wine in the hero, the bronze Lady Justice on wine, and the red-blazer cut-out on sand in the closing band.
+Photography: the red-suit portrait (waist-up) on wine in the hero, the bronze Lady Justice on wine, and the full-length white-suit cut-out on bordô in the closing band.
 
 **Key Characteristics:**
-- Bands alternate dark (wine family) and light (sand); the marquee is the single bordô strip.
+- Bands alternate dark (wine family) and light (sand); the marquee and the closing band are bordô.
 - One accent per band: dune on dark grounds, bordô on light grounds.
 - Three heading voices (Instrument Serif, Outfit 500, Anton) rotate; numbered section markers give rhythm.
 - Hairline rules, never boxes; square corners, with circles reserved for the WhatsApp float, the contact buttons.
@@ -214,11 +214,11 @@ Some values sit outside the palette and are never reused as colours:
 - **Scrollbar thumb:** bordô (#7A1E2E) on the wine-deep track, in browser chrome only.
 
 ### Named Rules
-**The Alternating Band Rule.** Neighbouring sections never share a ground. Dark bands use the wine family, light bands use sand; the marquee is the only bordô band.
+**The Alternating Band Rule.** Neighbouring sections never share a ground. Dark bands use the wine family, light bands use sand; the marquee and the closing band are bordô.
 
 **The One Accent per Band Rule.** Each band has exactly one accent: dune on dark, bordô on light. Hierarchy within it comes from alpha and the accent / accent-soft pair.
 
-**The One Red Rule.** The red blazer in the closing-band photograph is the only true red. Bordô is a wine tone, used for accents and actions on sand, never as a large fill except the marquee strip and the WhatsApp float.
+**The One Red Rule.** The red suit in the hero photograph is the only true red. Bordô is a wine tone: accents and actions on sand, and large fills only for the marquee strip, the closing band and the WhatsApp float.
 
 ## Typography
 
@@ -374,7 +374,7 @@ Native disclosure rows, ruled at ink 0.10. Questions are set in Instrument Serif
 A three-column band ruled top and bottom at ink 0.10, with vertical hairline dividers. Accent Instrument Serif figures count up from zero above small ink labels.
 
 ### Closing Band
-Ground-950, with the Instrument Serif heading, a short lead and the primary button at left. The lawyer stands at right in a red blazer, cut out and feathered at the foot, and rises in (14%, 1.8s, expo.out) as the band arrives. Behind her, at desktop, the monogram watermark draws itself.
+Ground-950, with the Instrument Serif heading, a short lead and the primary button at left. The lawyer stands at right in a white suit, cut out and feathered at the foot, on the bordô band, and rises in (14%, 1.8s, expo.out) as the band arrives. Behind her, at desktop, the monogram watermark draws itself.
 
 ### Monogram
 The EG mark is six accent SVG lines with square caps. It uses a 1.6 stroke in the header and footer and 1.1 in the preloader, where it draws itself stroke by stroke. In the marquee it shrinks to a 1.5rem separator at a 2.4 stroke. In the closing band it becomes a large static watermark, a near-invisible 0.09 stroke at 0.32 opacity, that draws itself once as the band arrives.
