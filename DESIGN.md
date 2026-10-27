@@ -180,14 +180,14 @@ components:
 
 **Creative North Star: "Wine Cellar, Sand Ledger"** (redesign 2026-10-27, owner request: leave the ground-and-gold look every law firm uses, stop the page from repeating itself.)
 
-The page is a sequence of full-width bands that alternate dark and light: wine, bordô, sand, wine, wine-deep, sand, wine, sand, wine, bordô, wine-deep. No two neighbouring sections share a ground, so the eye always registers a new chapter. Structure inside each band is still drawn, not built: hairlines in the band's accent divide, underline and track progress, and the EG monogram's six strokes draw themselves.
+The page is a sequence of full-width bands that alternate dark and light: wine (hero), bordô (marquee), sand (01 office), wine (02 practice intro), wine-deep (agribusiness), sand (banking), wine (03 lawyer), sand (04 FAQ), wine (05 contact, which now closes the page), wine-deep (footer). No two neighbouring sections share a ground, so the eye always registers a new chapter. Structure inside each band is still drawn, not built: hairlines in the band's accent divide, underline and track progress, and the EG monogram's six strokes draw themselves.
 
 Type changes voice from section to section instead of repeating one large serif. Her name stands in Anton capitals with a cast-metal finish. Instrument Serif carries statements and the client's own phrasing (roman, and italic for the closing line). Outfit at weight 500, tightly tracked, carries the plain-spoken headings. Anton returns for the two specialties and the contact heading. Every section opens with a numbered marker ("01 — O escritório").
 
-Photography: the red-suit portrait (waist-up) on wine in the hero, the bronze Lady Justice on wine, and the full-length white-suit cut-out on bordô in the closing band.
+Photography: the red-suit portrait (waist-up) on wine in the hero, the bronze Lady Justice on wine, the seated white-blazer portrait in the lawyer section and the office facade in the contact section.
 
 **Key Characteristics:**
-- Bands alternate dark (wine family) and light (sand); the marquee and the closing band are bordô.
+- Bands alternate dark (wine family) and light (sand); the marquee is the only bordô band.
 - One accent per band: dune on dark grounds, bordô on light grounds.
 - Three heading voices (Instrument Serif, Outfit 500, Anton) rotate; numbered section markers give rhythm.
 - Hairline rules, never boxes; square corners, with circles reserved for the WhatsApp float, the contact buttons.
@@ -214,11 +214,11 @@ Some values sit outside the palette and are never reused as colours:
 - **Scrollbar thumb:** bordô (#7A1E2E) on the wine-deep track, in browser chrome only.
 
 ### Named Rules
-**The Alternating Band Rule.** Neighbouring sections never share a ground. Dark bands use the wine family, light bands use sand; the marquee and the closing band are bordô.
+**The Alternating Band Rule.** Neighbouring sections never share a ground. Dark bands use the wine family, light bands use sand; the marquee is the only bordô band.
 
 **The One Accent per Band Rule.** Each band has exactly one accent: dune on dark, bordô on light. Hierarchy within it comes from alpha and the accent / accent-soft pair.
 
-**The One Red Rule.** The red suit in the hero photograph is the only true red. Bordô is a wine tone: accents and actions on sand, and large fills only for the marquee strip, the closing band and the WhatsApp float.
+**The One Red Rule.** The red suit in the hero photograph is the only true red. Bordô is a wine tone: accents and actions on sand, and large fills only for the marquee strip and the WhatsApp float.
 
 ## Typography
 
@@ -420,3 +420,14 @@ Native scrolling only (no Lenis); no custom cursor; no `mix-blend-mode` on fixed
 ## Fonts and loading (2026-10-27)
 
 Anton, Instrument Serif (roman and italic) and Outfit (400, 500) are self-hosted in `assets/fonts/` as WOFF, subset to Latin and Portuguese characters (about 100 KB in total), with Anton and Outfit 400 preloaded. No Google Fonts request. The preloader runs only from 1024px; phones go straight to the hero intro. The header keeps every item on one line from 1024px (tighter nav padding between 1024 and 1279px).
+
+
+## Length and section entrances (2026-10-27)
+
+Owner found the page too long (11 screens on desktop, 16 on phones). Now about 8.7 and 11.5:
+- The closing band ("Seu caso merece…" with the white-suit portrait) was removed; FAQ now comes before contact, so the contact section, with "Agendar atendimento", closes the page. Section markers renumbered: 04 Dúvidas, 05 Onde estamos.
+- The statistics band was removed (its facts already sit in the hero credentials row and the footer).
+- Copy that only repeated the practice-area list was cut (second office paragraph, second biography paragraph).
+- Section padding is 5rem / 6rem / 7rem (phone / 640px / 1024px) instead of up to 11rem.
+- Below 768px the ano-safra stages are a native horizontal swipe carousel with scroll snap (84% wide cards, next card peeking, "Deslize para ver as seis etapas" hint); it never captures vertical scroll.
+- Every section's content rises 64px and fades in once when its top crosses 90% of the viewport (1.1s, expo.out); band backgrounds stay in place.

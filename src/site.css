@@ -411,3 +411,15 @@
 
 /* pré-carregador só no computador */
 @media (max-width: 1023px) { .motion-ready .preloader { display: none; } }
+
+/* ---------- Ano-safra no celular: carrossel de deslizar (rolagem horizontal nativa, sem prender a página) ---------- */
+@media (max-width: 767px) {
+  .safra-track {
+    display: flex; gap: 1.25rem; overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory; scroll-padding-left: 1.25rem; scrollbar-width: none;
+    margin: 0 -1.25rem; padding: 0 1.25rem .5rem;
+  }
+  .safra-track::-webkit-scrollbar { display: none; }
+  .safra-stage { flex: 0 0 84%; scroll-snap-align: start; padding-bottom: 0; }
+  .safra-track:focus-visible { outline-offset: -2px; }
+}

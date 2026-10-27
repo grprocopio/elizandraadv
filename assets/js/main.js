@@ -411,6 +411,27 @@
     });
   });
 
+  /* ---------- Cada seção surge ao entrar na tela (uma vez) ----------
+     O fundo da faixa fica; o conteúdo sobe 64px e aparece. Só transform e opacity. */
+  [
+    '#escritorio > .container-page',
+    '[data-justice] > .container-page',
+    '[data-safra-pin]',
+    '#atuacao > div:last-child > .container-page',
+    '#advogada > .container-page',
+    '#duvidas > .container-page',
+    '#endereco > .container-page',
+    'footer > .container-page'
+  ].forEach(function (sel) {
+    var el = $(sel);
+    if (!el) return;
+    gsap.fromTo(el, { opacity: 0, y: 64 }, {
+      opacity: 1, y: 0, duration: 1.1, ease: 'expo.out',
+      scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+      onComplete: function () { gsap.set(el, { clearProps: 'transform,opacity' }); }
+    });
+  });
+
   /* ---------- Revelações ---------- */
   $$('[data-split]').forEach(function (el) {
     gsap.fromTo($$('.split-word', el), { yPercent: 110 }, {
@@ -480,44 +501,12 @@
   }
 
   /* Contadores */
-  var stats = $('[data-stats]');
-  if (stats) {
-    $$('[data-count]', stats).forEach(function (el) { el.textContent = '0'; });
-    gsap.fromTo($$('dd', stats), { yPercent: 40, opacity: 0 }, {
-      yPercent: 0, opacity: 1, duration: 1.2, ease: 'expo.out', stagger: 0.12,
-      scrollTrigger: { trigger: stats, start: 'top 85%' }
-    });
-    ScrollTrigger.create({
-      trigger: stats, start: 'top 85%', once: true,
-      onEnter: function () {
-        $$('[data-count]', stats).forEach(function (el, i) {
-          var target = parseInt(el.getAttribute('data-count'), 10) || 0;
-          var obj = { v: 0 };
-          gsap.to(obj, { v: target, duration: target > 9 ? 2.2 : 1.4, delay: i * 0.12, ease: 'power3.out', onUpdate: function () { el.textContent = String(Math.round(obj.v)); } });
-        });
-      }
-    });
-  }
-
-  /* Monograma do CTA final */
-  var ctaLines = $$('[data-mono-cta] line');
-  if (ctaLines.length) {
-    gsap.set(ctaLines, { strokeDasharray: 1, strokeDashoffset: 1 });
-    gsap.to(ctaLines, { strokeDashoffset: 0, duration: 1.8, ease: 'power2.inOut', stagger: 0.15, scrollTrigger: { trigger: '[data-cta]', start: 'top 70%' } });
-  }
-
   /* Estátua da Justiça */
   var statue = $('[data-justice-statue]');
   var justice = $('[data-justice]');
   if (statue && justice) {
     gsap.fromTo(statue, { opacity: 0, yPercent: 12, scale: 1.08 }, { opacity: 1, yPercent: 0, scale: 1, duration: 2, ease: 'expo.out', scrollTrigger: { trigger: justice, start: 'top 75%' } });
     gsap.fromTo('[data-justice-light]', { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 2.6, ease: 'power2.out', scrollTrigger: { trigger: justice, start: 'top 75%' } });
-  }
-
-  /* Retrato do CTA final */
-  var ctaPortrait = $('[data-cta-portrait]');
-  if (ctaPortrait) {
-    gsap.fromTo(ctaPortrait, { yPercent: 14, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 1.8, ease: 'expo.out', scrollTrigger: { trigger: '[data-cta]', start: 'top 65%' } });
   }
 
   /* ---------- Inclinação 3D (só transform, sem repintar a foto) ---------- */

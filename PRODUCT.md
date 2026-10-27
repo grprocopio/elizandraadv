@@ -34,14 +34,14 @@ A lawyer who spent more than 24 years inside the financial system and now defend
 
 - Name: Elizandra Girardon Advocacia. Logo: an "EG" monogram built from thin horizontal and vertical lines, with the name in wide-tracked capitals.
 - Body typeface Outfit, as on the current site.
-- Palette (owner choice, 2026-10-27, replacing navy and amber-gold): wine and sand. Sections alternate dark (wine) and light (sand), with bordô and dune as accents; the look must stand apart from the navy-and-gold default of law-firm sites. Owner direction: contemporary and bold. The hero uses the red-suit portrait (new, higher-quality photo supplied 2026-10-27) and the closing section the white-suit one, on a bordô band.
+- Palette (owner choice, 2026-10-27, replacing navy and amber-gold): wine and sand. Sections alternate dark (wine) and light (sand), with bordô and dune as accents; the look must stand apart from the navy-and-gold default of law-firm sites. Owner direction: contemporary and bold. The hero uses the red-suit portrait (new, higher-quality photo supplied 2026-10-27). The closing band was removed on 2026-10-27 to shorten the page; the contact section closes it.
 - Lady Justice statue is wanted (owner request, 2026-10-25): bronze statue with scales, used as a featured image. Still no gavel stock imagery.
 - Hero name set in a heavy condensed sans (Anton) with a metallic finish, per owner reference.
 
 ## Evidence on Hand
 
 - Office description and lawyer biography texts supplied by the user (real copy).
-- Photos: hero portrait in red suit, waist-up (assets/elizandra-hero-bordo.webp, cut out from foto4-bordo.jpg), white-suit full-length cut-out in the closing section (assets/elizandra-final-branco.webp), profile portrait in white blazer, office facade, logo (assets/). All supplied at low resolution; originals still needed.
+- Photos: hero portrait in red suit, waist-up (assets/elizandra-hero-bordo.webp, cut out from foto4-bordo.jpg), profile portrait in white blazer, office facade, logo (assets/). All supplied at low resolution; originals still needed.
 - No testimonials, client counts or case counts exist, and none may be invented.
 
 ## Product Principles
