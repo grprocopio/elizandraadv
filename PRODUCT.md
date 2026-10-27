@@ -41,7 +41,7 @@ A lawyer who spent more than 24 years inside the financial system and now defend
 ## Evidence on Hand
 
 - Office description and lawyer biography texts supplied by the user (real copy).
-- Photos: hero portrait in white suit (assets/elizandra-hero-branco.webp, cropped from elizandra-branco-recorte.webp), red-blazer cut-out in the closing section, profile portrait in white blazer, office facade, logo (assets/). All supplied at low resolution; originals still needed.
+- Photos: hero portrait in white suit, waist-up (assets/elizandra-hero-branco.webp, cropped from elizandra-branco-recorte.webp), red-blazer cut-out in the closing section, profile portrait in white blazer, office facade, logo (assets/). All supplied at low resolution; originals still needed.
 - No testimonials, client counts or case counts exist, and none may be invented.
 
 ## Product Principles
