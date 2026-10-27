@@ -450,4 +450,4 @@ Hero → marquee → 01 O escritório (sand, held statement) → 02 A advogada (
 
 ## Marquee removed (2026-10-27)
 
-The scrolling practice-area marquee between the hero and section 01 was removed (it repeated the practice areas, moving text was hard to read, and it looked templated). In its place is a static gradient band, `.fade-band` (7–13rem tall): wine #4A1220 → bordô #7A1E2E → #B9837C → sand #EFE5D4, joining the hero to the sand office section without a seam. Bordô now appears as a large fill only inside this gradient and on the WhatsApp float. Earlier mentions of the marquee in this file are historical.
+The scrolling practice-area marquee between the hero and section 01 was removed (it repeated the practice areas, moving text was hard to read, and it looked templated). A gradient band was tried in its place and rejected by the owner; the hero now meets the sand office section with a straight cut, like every other band. Bordô appears as a large fill only on the WhatsApp float. Earlier mentions of the marquee in this file are historical.

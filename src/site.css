@@ -411,8 +411,3 @@
   }
 }
 
-/* ---------- Transição entre a abertura e o escritório: vinho → bordô → areia (estático) ---------- */
-.fade-band {
-  height: clamp(7rem, 16vw, 13rem);
-  background: linear-gradient(180deg, #4A1220 0%, #7A1E2E 38%, #B9837C 68%, #EFE5D4 100%);
-}
