@@ -166,14 +166,7 @@
 .safra-stage.is-active::before { background: rgb(var(--accent)); outline: 1px solid rgb(var(--accent) / .4); outline-offset: 4px; }
 .safra-progress { display: none; }
 
-.safra.is-horizontal .safra-viewport { overflow: hidden; }
-.safra.is-horizontal .safra-track { display: flex; width: max-content; position: relative; padding-top: 2.5rem; }
-.safra.is-horizontal .safra-stage { width: min(26rem, 33vw); flex: none; border-left: 0; padding: 2.5rem 3.5rem 0 0; }
-.safra.is-horizontal .safra-stage::before { left: 0; top: -5px; }
-.safra.is-horizontal .safra-progress { display: block; position: absolute; left: 0; right: 3.5rem; top: 2.5rem; height: 1px; background: rgb(var(--accent) / .22); }
-.safra.is-horizontal .safra-progress span { display: block; height: 100%; background: rgb(var(--accent)); transform-origin: left center; transform: scaleX(0); }
 .safra-stage .stage-body { transition: opacity .6s var(--ease-out); }
-.safra.is-horizontal .safra-stage:not(.is-active) .stage-body { opacity: .42; }
 
 /* ---------- Bank clauses ---------- */
 .clause { position: relative; color: rgb(var(--ink)); transition: background-color .45s var(--ease-out); }
@@ -290,10 +283,8 @@
 .justice-light { background: radial-gradient(closest-side, rgb(var(--accent) / .34), rgb(var(--accent) / .12) 55%, rgb(var(--accent) / 0) 80%); }
 
 /* ---------- Desempenho: camadas próprias para o que se move ---------- */
-[data-portrait-inner], .hero-halo, .hero-bg, .hero-bg-img, .justice-statue, .justice-light,
-.marquee-track, .safra-track, .cta-portrait, [data-parallax-img], .site-header {
-  will-change: transform;
-}
+/* só o que se move continuamente ganha camada própria */
+[data-portrait-inner], .marquee-track, .site-header { will-change: transform; }
 .hero-portrait, .justice-statue, .cta-portrait { backface-visibility: hidden; }
 
 /* ---------- Nome: cada letra em camada própria, sem corte no pulo ---------- */
@@ -398,3 +389,12 @@
   transition: opacity .8s cubic-bezier(.33,1,.68,1), transform 1.05s cubic-bezier(.16,1,.3,1), filter .8s cubic-bezier(.33,1,.68,1);
 }
 .motion-ready .safra-art.is-in { opacity: 1; transform: none; filter: none; }
+
+/* ---------- Ano-safra em grade (sem pin nem rolagem horizontal: a página nunca prende) ---------- */
+@media (min-width: 768px) {
+  .safra-track { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 3rem; }
+}
+@media (min-width: 1024px) {
+  .safra-track { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 3.5rem; row-gap: .5rem; }
+  .safra-stage { max-width: none; }
+}

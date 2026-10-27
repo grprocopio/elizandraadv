@@ -355,6 +355,8 @@ A full-bleed ground-deep strip ruled top and bottom in accent at 0.20. Practice 
 The banking problems are a ruled list of WhatsApp links. Each row sets the client's phrasing in the title style across six columns, the practice area in accent-soft caption type across five, and a thin arrow in the last column. Rows divide on ink hairlines at 0.15. On hover or focus, an accent wash at 0.09 sweeps in from the left (0.7s). The phrase indents 12px and turns accent-soft, the arrow slides 6px and turns accent, and an accent rule draws across the bottom.
 
 ### Ano-safra Timeline (signature)
+
+**Layout since 2026-10-27 (performance):** no pin and no horizontal scroll. The six stages sit in a grid (1 column on phones, 2 from 768px, 3 from 1024px), each with its own vertical accent spine and diamond marker; stages rise in once when they enter. Earlier descriptions of a pinned horizontal track below are historical.
 Six stages run from contract to asset risk. Each has a Instrument Serif stage name, an ink description, and a accent-soft remedy line set off by an ink 0.10 hairline. Markers are rotated hollow accent squares. In the horizontal desktop variant, inactive stages dim to 0.42 opacity, stage names slide in as they enter, and the active stage fills its marker.
 
 
@@ -410,4 +412,4 @@ A 56px accent circle with the ground WhatsApp mark, fixed bottom right. A 1px ac
 
 ## Performance Rules (2026-10-27)
 
-Native scrolling only (no Lenis); no custom cursor; no `mix-blend-mode` on fixed elements; tilt animates transform only (the glare was removed because it repainted the photo on every mouse move); the hero name animates as 3 words, never per letter (was ~19 GPU layers with gradient text); mouse listeners are passive; the ano-safra story clock sleeps when no illustration is on screen; pinned and scrubbed scenes use scrub 0.3 or `true`; scroll unlocks when the preloader curtain lifts (~2s), not at the end of the hero intro.
+Native scrolling only (no Lenis); no custom cursor; no `mix-blend-mode` on fixed elements; tilt animates transform only (the glare was removed because it repainted the photo on every mouse move); the hero name animates as 3 words, never per letter (was ~19 GPU layers with gradient text); mouse listeners are passive; the ano-safra story clock sleeps when no illustration is on screen; no pinned scenes and no scroll-linked parallax (hero background, halo, portrait, name, statue and facade no longer move with scroll; only the reading-progress bar and the word-lighting statement are scrubbed); photos reveal with opacity and a 48px rise instead of clip-path; only the portrait and the name follow the mouse; lazy photos are decoded ahead of time during idle; the preloader lifts by ~1.5s; scroll unlocks when the preloader curtain lifts (~2s), not at the end of the hero intro.
