@@ -198,7 +198,7 @@ components:
 
 A deep navy field runs edge to edge and is never broken by a white page. Structure on it is drawn, not built. Thin amber and ivory hairlines divide, underline and track progress. They share their straight-stroke vocabulary with the EG monogram, whose six strokes are redrawn as SVG lines that draw themselves when they appear. Type does the monumental work. Her name stands in tall Anton capitals with a cast-metal finish. Bodoni Moda at very large sizes carries section titles and the client's own phrasing of a problem. Outfit carries everything that must read calmly for an older visitor on a phone.
 
-Density is low and the sections form bands. Each one is a full-width navy band, one step lighter or darker than its neighbour, with generous vertical padding. Amber is the only warm, saturated colour. No red appears on the page: since 2026-10-27 the hero uses the white-suit portrait, the same one that closes the page. Photography sits low in the field: the office facade dimmed behind the hero, and cut-outs (the lawyer twice, a bronze Lady Justice once) that feather into the navy. Motion is exponential and editorial: a drawn-monogram preloader, masked word reveals, drawn strokes, words that light as you read and a pinned timeline. On a mouse, the page also answers the hand. An amber ring follows the pointer, actions pull toward it, and figures and photographs turn under it. The page is complete and legible without any of it.
+Density is low and the sections form bands. Each one is a full-width navy band, one step lighter or darker than its neighbour, with generous vertical padding. Amber is the only warm, saturated colour. The lawyer's red blazer in the closing photograph is the only red (since 2026-10-27 the hero uses the white-suit portrait and the closing band the red-blazer one). Photography sits low in the field: the office facade dimmed behind the hero, and cut-outs (the lawyer twice, a bronze Lady Justice once) that feather into the navy. Motion is exponential and editorial: a drawn-monogram preloader, masked word reveals, drawn strokes, words that light as you read and a pinned timeline. On a mouse, the page also answers the hand. An amber ring follows the pointer, actions pull toward it, and figures and photographs turn under it. The page is complete and legible without any of it.
 
 The system rejects the law-firm default of gavels and rows of equal boxed service cards. Content that would otherwise be cards is set as ruled rows or as stages on a timeline. The one classical emblem is a bronze Lady Justice, used once, to introduce the practice areas.
 
@@ -231,7 +231,7 @@ Some values sit outside the palette and are never reused as colours:
 - **Tilt glare:** a warm light, described under Elevation & Depth.
 
 ### Named Rules
-**The No Red Rule.** No token, rule, button, illustration or photograph on the page is red. (Until 2026-10-27 the hero portrait wore a red blazer; owner swapped it for the white-suit portrait.)
+**The One Red Rule.** Red exists only in the closing-band photograph. No token, rule, button or illustration is red. (Owner swapped the hero and closing portraits on 2026-10-27.)
 
 **The One Metal Rule.** Amber is the only accent hue. Hierarchy within it comes from alpha and from the amber / amber-soft pair, never from a second accent. The hero name's cast-metal finish is a material, not a second accent, and it appears nowhere else.
 
@@ -386,7 +386,7 @@ Native disclosure rows, ruled at ivory 0.10. Questions are set in Bodoni at the 
 A three-column band ruled top and bottom at ivory 0.10, with vertical hairline dividers. Amber Bodoni figures count up from zero above small ivory labels.
 
 ### Closing Band
-Navy-950, with the Bodoni heading, a short lead and the primary button at left. The lawyer stands at right in a white suit, cut out and feathered at the foot, and rises in (14%, 1.8s, expo.out) as the band arrives. Behind her, at desktop, the monogram watermark draws itself.
+Navy-950, with the Bodoni heading, a short lead and the primary button at left. The lawyer stands at right in a red blazer, cut out and feathered at the foot, and rises in (14%, 1.8s, expo.out) as the band arrives. Behind her, at desktop, the monogram watermark draws itself.
 
 ### Monogram
 The EG mark is six amber SVG lines with square caps. It uses a 1.6 stroke in the header and footer and 1.1 in the preloader, where it draws itself stroke by stroke. In the marquee it shrinks to a 1.5rem separator at a 2.4 stroke. In the closing band it becomes a large static watermark, a near-invisible 0.09 stroke at 0.32 opacity, that draws itself once as the band arrives.
