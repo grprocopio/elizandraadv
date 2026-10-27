@@ -372,7 +372,36 @@
     });
   });
 
+  /* ---------- 01 Escritório: a seção segura na tela enquanto a frase acende ----------
+     Telas a partir de 768 x 640: a seção fica fixa (position: sticky, nativo, a página continua rolando)
+     por 70% de uma tela; as palavras acendem uma a uma, depois sobem o parágrafo e os públicos.
+     Telas menores: sem segurar (o conteúdo é mais alto que a tela); a frase acende num trecho maior. */
+  var holdSec = $('[data-hold]');
+  if (holdSec) {
+    var holdWords = $$('.scrub-word', holdSec);
+    var holdAfter = $$('[data-hold-after]', holdSec);
+    gsap.matchMedia().add({
+      hold: '(min-width: 768px) and (min-height: 640px)',
+      free: '(max-width: 767px), (max-height: 639px)'
+    }, function (ctx) {
+      if (ctx.conditions.hold) {
+        var tl = gsap.timeline({ scrollTrigger: { trigger: holdSec, start: 'top 25%', end: 'bottom bottom', scrub: 0.3 } });
+        tl.fromTo(holdWords, { opacity: 0.16 }, { opacity: 1, ease: 'none', stagger: 0.12, duration: 0.5 })
+          .fromTo(holdAfter, { opacity: 0, y: 28 }, { opacity: 1, y: 0, ease: 'power1.out', stagger: 0.2, duration: 0.5 }, '+=0.05')
+          .to({}, { duration: 0.9 }); // pausa: tudo completo na tela antes de a seção se soltar
+      } else {
+        gsap.fromTo(holdWords, { opacity: 0.16 }, {
+          opacity: 1, ease: 'none', stagger: 0.1,
+          scrollTrigger: { trigger: holdSec, start: 'top 90%', end: 'bottom 25%', scrub: 0.3 }
+        });
+        holdAfter.forEach(function (el) {
+          gsap.fromTo(el, { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+        });
+      }
+    });
+  }
   $$('[data-scrub-words]').forEach(function (el) {
+    if (el.closest('[data-hold]')) return;
     gsap.fromTo($$('.scrub-word', el), { opacity: 0.16 }, {
       opacity: 1, ease: 'none', stagger: 0.1,
       scrollTrigger: { trigger: el, start: 'top 80%', end: 'bottom 40%', scrub: true }

@@ -436,3 +436,8 @@ Owner found the page too long (11 screens on desktop, 16 on phones). Now about 8
 ## No preloader, no hero intro (2026-10-27)
 
 Owner found the first load slow, the hero photo especially. Measured cause: the photo (55 KB) downloaded instantly but stayed invisible for 2.7–3.9s because CSS hid the hero until GSAP arrived from the CDN, then the preloader (~1.5s) and the intro fade (1.4s) ran. The preloader and the hero intro were removed: the hero is visible from the first paint (about 0.2–0.4s in tests, even with the libraries delayed by 3s). Earlier mentions in this file of a drawn-monogram preloader, a masked name rise or the hero intro sequence are historical. Sections below the hero still rise in on scroll.
+
+
+## Office statement hold (2026-10-27)
+
+At 768×640 and up, section 01 (office) is 170svh tall and its content is `position: sticky; top: 0` in a 100svh centred stage, so it stays on screen for about 70% of a viewport of scrolling. A scrubbed timeline (start when the section top reaches 25% of the viewport, end when it releases; scrub 0.3) lights the statement word by word, then raises the paragraph and the audience list, then holds everything complete briefly before release. Native sticky, not a ScrollTrigger pin: the page keeps scrolling normally. On smaller screens there is no hold (the content is taller than the viewport); the words light over a longer stretch instead, and the paragraph and list rise in on entry.

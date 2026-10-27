@@ -9,7 +9,8 @@ Animar só `transform`, `opacity` e traço de SVG; ouvintes de mouse passivos; l
 scrub numérico baixo (≤ 0,3).
 Sem pré-carregador e sem animação de entrada na abertura (pedido da cliente, 2026-10-27): foto, nome, textos e botão
 aparecem no primeiro quadro, sem depender das bibliotecas. O nome nunca é dividido em letras.
-Sem `pin` do ScrollTrigger (nada de prender a rolagem) e sem parallax ligado à rolagem; revelações de fotos sem `clip-path`;
+Sem `pin` do ScrollTrigger e sem parallax ligado à rolagem; revelações de fotos sem `clip-path`. Exceção pedida pela cliente
+(2026-10-27): a seção 01 Escritório segura na tela com `position: sticky` nativo (não pin) enquanto a frase acende, só ≥ 768×640;
 `will-change` só no que se move sempre (retrato, faixa corrida, header).
 Fontes locais em `assets/fonts/` (não voltar ao Google Fonts).
 
