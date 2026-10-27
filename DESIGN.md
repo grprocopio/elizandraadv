@@ -198,7 +198,7 @@ components:
 
 A deep navy field runs edge to edge and is never broken by a white page. Structure on it is drawn, not built. Thin amber and ivory hairlines divide, underline and track progress. They share their straight-stroke vocabulary with the EG monogram, whose six strokes are redrawn as SVG lines that draw themselves when they appear. Type does the monumental work. Her name stands in tall Anton capitals with a cast-metal finish. Bodoni Moda at very large sizes carries section titles and the client's own phrasing of a problem. Outfit carries everything that must read calmly for an older visitor on a phone.
 
-Density is low and the sections form bands. Each one is a full-width navy band, one step lighter or darker than its neighbour, with generous vertical padding. Amber is the only warm, saturated colour, and the lawyer's blazer in the hero photograph is the only red. Photography sits low in the field: the office facade dimmed behind the hero, and cut-outs (the lawyer twice, a bronze Lady Justice once) that feather into the navy. Motion is exponential and editorial: a drawn-monogram preloader, masked word reveals, drawn strokes, words that light as you read and a pinned timeline. On a mouse, the page also answers the hand. An amber ring follows the pointer, actions pull toward it, and figures and photographs turn under it. The page is complete and legible without any of it.
+Density is low and the sections form bands. Each one is a full-width navy band, one step lighter or darker than its neighbour, with generous vertical padding. Amber is the only warm, saturated colour. No red appears on the page: since 2026-10-27 the hero uses the white-suit portrait, the same one that closes the page. Photography sits low in the field: the office facade dimmed behind the hero, and cut-outs (the lawyer twice, a bronze Lady Justice once) that feather into the navy. Motion is exponential and editorial: a drawn-monogram preloader, masked word reveals, drawn strokes, words that light as you read and a pinned timeline. On a mouse, the page also answers the hand. An amber ring follows the pointer, actions pull toward it, and figures and photographs turn under it. The page is complete and legible without any of it.
 
 The system rejects the law-firm default of gavels and rows of equal boxed service cards. Content that would otherwise be cards is set as ruled rows or as stages on a timeline. The one classical emblem is a bronze Lady Justice, used once, to introduce the practice areas.
 
@@ -231,7 +231,7 @@ Some values sit outside the palette and are never reused as colours:
 - **Tilt glare:** a warm light, described under Elevation & Depth.
 
 ### Named Rules
-**The One Red Rule.** Red exists only in the hero photograph. No token, rule, button or illustration is red.
+**The No Red Rule.** No token, rule, button, illustration or photograph on the page is red. (Until 2026-10-27 the hero portrait wore a red blazer; owner swapped it for the white-suit portrait.)
 
 **The One Metal Rule.** Amber is the only accent hue. Hierarchy within it comes from alpha and from the amber / amber-soft pair, never from a second accent. The hero name's cast-metal finish is a material, not a second accent, and it appears nowhere else.
 
