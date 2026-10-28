@@ -511,17 +511,19 @@
     }, extra || {}));
   }
 
-  /* Ano-safra com rolagem (pedido da cliente, 2026-10-27): a seção segura na tela (sticky nativo)
-     e a rolagem vertical leva as seis etapas para o lado, 1 px de rolagem = 1 px de percurso.
-     Só liga quando o bloco cabe inteiro na altura da tela; senão, fica a grade/carrossel de antes. */
+  /* Ano-safra com rolagem (pedido da cliente, 2026-10-27; no celular também, 2026-10-28): a seção segura na tela
+     (sticky nativo) e a rolagem vertical leva as seis etapas para o lado, 1 px de rolagem = 1 px de percurso.
+     Se o bloco for mais alto que a tela, ele prende mais acima (top negativo): o título sobe um pouco e as etapas
+     ficam inteiras na tela. Só fica a grade/carrossel quando nem as etapas cabem (celular deitado). */
   function safraDistance() {
     var box = safraTrack.parentNode, cs = getComputedStyle(box);
     var inner = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
     return Math.max(0, Math.ceil(safraTrack.scrollWidth - inner));
   }
+  function safraOffset() { return Math.min(0, window.innerHeight - safraPin.scrollHeight); }
   function safraFits() {
     safra.classList.add('is-scrollx');
-    var fits = safraPin.scrollHeight <= window.innerHeight + 1 && safraDistance() > 40;
+    var fits = safraTrack.offsetHeight + 72 <= window.innerHeight && safraDistance() > 40;
     if (!fits) safra.classList.remove('is-scrollx');
     return fits;
   }
@@ -530,20 +532,24 @@
     var triggers = [];
     var tween = null;
     if (safra && safraPin && safraTrack && safraFits()) {
-      var setHeight = function () { safra.style.height = (window.innerHeight + safraDistance()) + 'px'; };
+      var startAt = function () { return 'top ' + safraOffset() + 'px'; };
+      var setHeight = function () {
+        safraPin.style.top = safraOffset() + 'px';
+        safra.style.height = (Math.max(window.innerHeight, safraPin.scrollHeight) + safraDistance()) + 'px';
+      };
       setHeight();
       tween = gsap.to(safraTrack, {
         x: function () { return -safraDistance(); },
         ease: 'none',
         scrollTrigger: {
-          trigger: safra, start: 'top top', end: 'bottom bottom', scrub: 0.3,
+          trigger: safra, start: startAt, end: 'bottom bottom', scrub: 0.3,
           invalidateOnRefresh: true, onRefreshInit: setHeight
         }
       });
       if (safraBar) {
         triggers.push(gsap.to(safraBar, {
           scaleX: 1, ease: 'none',
-          scrollTrigger: { trigger: safra, start: 'top top', end: 'bottom bottom', scrub: 0.3 }
+          scrollTrigger: { trigger: safra, start: startAt, end: 'bottom bottom', scrub: 0.3 }
         }).scrollTrigger);
       }
       var vw = window.innerWidth;
@@ -557,7 +563,7 @@
     return function () {
       triggers.forEach(function (t) { if (t) t.kill(); });
       if (tween) { if (tween.scrollTrigger) tween.scrollTrigger.kill(); tween.kill(); }
-      if (safra) { safra.classList.remove('is-scrollx'); safra.style.height = ''; }
+      if (safra) { safra.classList.remove('is-scrollx'); safra.style.height = ''; safraPin.style.top = ''; }
       if (safraTrack) gsap.set(safraTrack, { clearProps: 'transform' });
     };
   }
